@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>郭一博个人简历</title>
+    <style>
+      :root {
+        --bg1: #f4f7ff;
+        --bg2: #eef7ff;
+        --card: rgba(255, 255, 255, 0.82);
+        --line: #dfe8ff;
+        --primary: #2457f7;
+        --primary-dark: #183bb8;
+        --secondary: #7b8cff;
+        --text: #1d2433;
+        --muted: #667085;
+        --success: #2bb673;
+        --warning: #ffbf47;
+        --shadow: 0 20px 40px rgba(36, 87, 247, 0.1);
+      }
+
+      * { box-sizing: border-box; }
+
+      html { scroll-behavior: smooth; }
+
+      body {
+        margin: 0;
+        font-family: "Microsoft YaHei", "Segoe UI", sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(circle at top left, rgba(110, 143, 255, 0.18), transparent 34%),
+          radial-gradient(circle at bottom right, rgba(75, 197, 255, 0.18), transparent 30%),
+          linear-gradient(135deg, var(--bg1), var(--bg2));
+      }
+
+      .page {
+        width: min(1180px, calc(100% - 32px));
+        margin: 36px auto;
+        padding: 26px;
+        background: rgba(255, 255, 255, 0.46);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255,255,255,0.5);
+        border-radius: 28px;
+        box-shadow: var(--shadow);
+      }
+
+      .topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        padding: 8px 12px 22px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 700;
+        letter-spacing: 1px;
+      }
+
+      .brand-mark {
+        width: 42px;
+        height: 42px;
+        border-radius: 14px;
+        display: grid;
+        place-items: center;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        color: #fff;
+        font-size: 20px;
+        box-shadow: 0 12px 24px rgba(36,87,247,0.28);
+      }
+
+      .tagline {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .header {
+        display: grid;
+        grid-template-columns: 1.4fr 0.8fr;
+        gap: 28px;
+        padding: 28px 10px 10px;
+      }
+
+      .profile-card, .side-card, .section-card, .project-card, .timeline-item, .skill-card {
+        background: var(--card);
+        border: 1px solid rgba(157, 172, 255, 0.28);
+        border-radius: 24px;
+        box-shadow: 0 18px 28px rgba(17, 30, 84, 0.06);
+      }
+
+      .profile-card {
+        padding: 28px;
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(231,238,255,0.9));
+      }
+
+      .avatar {
+        width: 120px;
+        height: 120px;
+        min-width: 120px;
+        border-radius: 30px;
+        background: linear-gradient(135deg, #1e3de2, #7ab7ff);
+        display: grid;
+        place-items: center;
+        font-size: 34px;
+        font-weight: 700;
+        color: #fff;
+        box-shadow: 0 16px 30px rgba(35, 19, 94, 0.18);
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(2rem, 3vw, 3.1rem);
+        line-height: 1.1;
+      }
+
+      .title {
+        margin: 8px 0 18px;
+        color: var(--primary-dark);
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        font-size: 0.95rem;
+      }
+
+      .intro {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.8;
+        max-width: 620px;
+      }
+
+      .meta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 22px;
+      }
+
+      .pill {
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: rgba(36, 87, 247, 0.08);
+        color: var(--primary-dark);
+        font-size: 12px;
+        font-weight: 700;
+        border: 1px solid rgba(36,87,247,0.12);
+      }
+
+      .side-card {
+        padding: 24px 20px;
+      }
+
+      .contact-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        gap: 14px;
+      }
+
+      .contact-list li {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: var(--text);
+        font-size: 0.96rem;
+      }
+
+      .contact-icon {
+        width: 34px;
+        height: 34px;
+        border-radius: 12px;
+        display: grid;
+        place-items: center;
+        background: rgba(36, 87, 247, 0.08);
+        color: var(--primary-dark);
+        font-size: 1.15rem;
+      }
+
+      .content {
+        display: grid;
+        grid-template-columns: 1.4fr 0.8fr;
+        gap: 24px;
+        margin-top: 12px;
+      }
+
+      .left, .right {
+        display: grid;
+        gap: 22px;
+      }
+
+      .section-card {
+        padding: 22px 22px 18px;
+      }
+
+      .section-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 16px;
+      }
+
+      .section-title {
+        margin: 0;
+        font-size: 1.12rem;
+        letter-spacing: 0.08em;
+        color: var(--primary-dark);
+      }
+
+      .section-badge {
+        padding: 5px 10px;
+        border-radius: 999px;
+        background: rgba(36, 87, 247, 0.08);
+        color: var(--primary);
+        font-size: 11px;
+        font-weight: 700;
+      }
+
+      .timeline {
+        position: relative;
+        padding-left: 10px;
+      }
+
+      .timeline::before {
+        content: "";
+        position: absolute;
+        left: 9px;
+        top: 10px;
+        bottom: 14px;
+        width: 2px;
+        background: linear-gradient(180deg, rgba(36,87,247,0.8), rgba(36,87,247,0.15));
+      }
+
+      .timeline-item {
+        position: relative;
+        margin-left: 24px;
+        padding: 18px 18px 16px 18px;
+        margin-bottom: 14px;
+      }
+
+      .timeline-item::before {
+        content: "";
+        position: absolute;
+        left: -25px;
+        top: 22px;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--primary), #79b3ff);
+        box-shadow: 0 0 0 4px rgba(36,87,247,0.1);
+      }
+
+      .timeline-top {
+        display: flex;
+        justify-content: space-between;
+        gap: 18px;
+        flex-wrap: wrap;
+        margin-bottom: 8px;
+      }
+
+      .role {
+        margin: 0;
+        font-size: 1.04rem;
+      }
+
+      .time {
+        color: var(--muted);
+        font-size: 0.86rem;
+        white-space: nowrap;
+      }
+
+      .company {
+        margin: 0 0 10px;
+        color: var(--primary-dark);
+        font-weight: 700;
+      }
+
+      .desc {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.8;
+      }
+
+      .project-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .project-card {
+        padding: 18px 18px 16px;
+      }
+
+      .project-card h4 {
+        margin: 0 0 8px;
+        font-size: 1.02rem;
+      }
+
+      .project-card p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.7;
+        font-size: 0.92rem;
+      }
+
+      .project-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 12px;
+      }
+
+      .project-tags span {
+        padding: 6px 9px;
+        border-radius: 999px;
+        background: rgba(123, 140, 255, 0.1);
+        color: var(--primary-dark);
+        font-size: 12px;
+      }
+
+      .skill-list {
+        display: grid;
+        gap: 12px;
+      }
+
+      .skill-item {
+        display: grid;
+        gap: 8px;
+      }
+
+      .skill-head {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.94rem;
+        color: var(--text);
+      }
+
+      .bar {
+        height: 10px;
+        background: rgba(125, 136, 255, 0.12);
+        border-radius: 999px;
+        overflow: hidden;
+      }
+
+      .fill {
+        height: 100%;
+        border-radius: inherit;
+        background: linear-gradient(90deg, var(--primary), #7fb1ff);
+      }
+
+      .fill-90 { width: 90%; }
+      .fill-85 { width: 85%; }
+      .fill-80 { width: 80%; }
+      .fill-75 { width: 75%; }
+
+      .tag-cloud {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .tag {
+        padding: 9px 12px;
+        font-size: 0.85rem;
+        border-radius: 999px;
+        background: linear-gradient(135deg, rgba(36,87,247,0.08), rgba(123, 140, 255, 0.14));
+        color: var(--primary-dark);
+        border: 1px solid rgba(36,87,247,0.1);
+      }
+
+      .mini-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .stat-box {
+        padding: 16px 14px;
+        border-radius: 18px;
+        background: linear-gradient(135deg, rgba(36,87,247,0.06), rgba(123,140,255,0.12));
+        border: 1px solid rgba(36,87,247,0.08);
+      }
+
+      .stat-num {
+        display: block;
+        font-size: 1.8rem;
+        font-weight: 800;
+        color: var(--primary-dark);
+      }
+
+      .stat-label {
+        font-size: 0.85rem;
+        color: var(--muted);
+      }
+
+      @media (max-width: 900px) {
+        .header, .content {
+          grid-template-columns: 1fr;
+        }
+
+        .topbar {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+
+      @media (max-width: 620px) {
+        .page {
+          width: min(100% - 12px, 1180px);
+          margin: 12px auto;
+          padding: 14px;
+        }
+
+        .profile-card {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .project-grid, .mini-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .avatar {
+          width: 92px;
+          height: 92px;
+          min-width: 92px;
+          font-size: 28px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <div class="topbar">
+        <div class="brand">
+          <div class="brand-mark">G</div>
+          <span>个人简历</span>
+        </div>
+        <div class="tagline">Creative · Focused · Reliable</div>
+      </div>
+
+      <header class="header">
+        <div class="profile-card">
+          <div class="avatar">郭</div>
+          <div>
+            <h1>郭一博</h1>
+            <div class="title">前端开发 / 产品设计 / 视觉实现</div>
+            <p class="intro">
+              具备扎实的前端开发能力与产品思维，热爱将想法转化为清晰、优雅且高效的数字产品。
+              对用户体验、界面交互与前端工程化有持续关注，擅长在需求与实现之间建立桥梁，推动高质量交付。
+            </p>
+            <div class="meta-row">
+              <span class="pill">全栈视角</span>
+              <span class="pill">学习能力强</span>
+              <span class="pill">沟通协作</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="side-card">
+          <ul class="contact-list">
+            <li><span class="contact-icon">📞</span> +86 138-0000-0000</li>
+            <li><span class="contact-icon">✉️</span> guoyibo@example.com</li>
+            <li><span class="contact-icon">📍</span> 广州 / 深圳</li>
+            <li><span class="contact-icon">💻</span> github.com/guoyibo</li>
+          </ul>
+        </aside>
+      </header>
+
+      <main class="content">
+        <div class="left">
+          <section class="section-card">
+            <div class="section-head">
+              <h2 class="section-title">教育经历</h2>
+              <span class="section-badge">2021 - 2025</span>
+            </div>
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-top">
+                  <h3 class="role">计算机科学与技术</h3>
+                  <span class="time">2021.09 - 2025.06</span>
+                </div>
+                <p class="company">某某大学 · 本科</p>
+                <p class="desc">
+                  主修前端开发、数据结构、计算机网络、软件工程等课程。曾获校级优秀学生奖、学习进步奖。
+                  参与多个校园项目与创新实践，积累了从需求分析到实现交付的完整经验。
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="section-card">
+            <div class="section-head">
+              <h2 class="section-title">工作经历</h2>
+              <span class="section-badge">2 年</span>
+            </div>
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-top">
+                  <h3 class="role">前端开发工程师</h3>
+                  <span class="time">2023.06 - 至今</span>
+                </div>
+                <p class="company">XX科技有限公司</p>
+                <p class="desc">
+                  负责官网与后台管理系统的前端开发，参与组件库建设、页面优化及性能提升。使用 Vue 3 + TypeScript
+                  完成业务模块开发，推动页面加载速度提升 30%，提升用户体验和维护效率。
+                </p>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-top">
+                  <h3 class="role">前端实习生</h3>
+                  <span class="time">2022.06 - 2023.05</span>
+                </div>
+                <p class="company">XX数字创新工作室</p>
+                <p class="desc">
+                  参与内容型网站与营销活动页的开发，负责页面交互、响应式适配和视觉还原。协同设计师与后端同事完成项目迭代，
+                  熟悉常见业务组件和小程序/网页端协同开发流程。
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="section-card">
+            <div class="section-head">
+              <h2 class="section-title">项目经验</h2>
+              <span class="section-badge">3 项</span>
+            </div>
+            <div class="project-grid">
+              <article class="project-card">
+                <h4>智慧校园管理平台</h4>
+                <p>
+                  面向学校信息化管理需求，整合学生信息、课程安排、通知公告和数据统计模块，帮助老师提升教学管理效率。
+                </p>
+                <div class="project-tags">
+                  <span>Vue</span>
+                  <span>Element Plus</span>
+                  <span>Axios</span>
+                </div>
+              </article>
+
+              <article class="project-card">
+                <h4>企业官网重构</h4>
+                <p>
+                  以品牌展示与营销转化为核心，重新设计企业官网结构与交互，提升移动端体验和内容传播效率。
+                </p>
+                <div class="project-tags">
+                  <span>HTML</span>
+                  <span>CSS</span>
+                  <span>JavaScript</span>
+                </div>
+              </article>
+
+              <article class="project-card">
+                <h4>任务协作管理系统</h4>
+                <p>
+                  支持任务分配、进度跟踪、团队沟通与报表展示，优化团队运营流程和协作效率。
+                </p>
+                <div class="project-tags">
+                  <span>React</span>
+                  <span>Ant Design</span>
+                  <span>Node.js</span>
+                </div>
+              </article>
+
+              <article class="project-card">
+                <h4>个人简历站点</h4>
+                <p>
+                  以视觉设计与内容组织为核心，打造适合展示个人能力与项目经历的前端作品，体现专业与审美感。
+                </p>
+                <div class="project-tags">
+                  <span>Figma</span>
+                  <span>前端开发</span>
+                  <span>布局设计</span>
+                </div>
+              </article>
+            </div>
+          </section>
+        </div>
+
+        <aside class="right">
+          <section class="section-card">
+            <div class="section-head">
+              <h2 class="section-title">专业技能</h2>
+              <span class="section-badge">能力</span>
+            </div>
+            <div class="skill-list">
+              <div class="skill-item">
+                <div class="skill-head"><span>HTML / CSS / JavaScript</span><span>90%</span></div>
+                <div class="bar"><div class="fill fill-90"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-head"><span>Vue / React</span><span>85%</span></div>
+                <div class="bar"><div class="fill fill-85"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-head"><span>UI 设计 / 交互实现</span><span>80%</span></div>
+                <div class="bar"><div class="fill fill-80"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-head"><span>沟通协调 / 文档输出</span><span>75%</span></div>
+                <div class="bar"><div class="fill fill-75"></div></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="section-card">
+            <div class="section-head">
+              <h2 class="section-title">技能标签</h2>
+              <span class="section-badge">常用</span>
+            </div>
+            <div class="tag-cloud">
+              <span class="tag">Vue 3</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">Responsive</span>
+              <span class="tag">Git</span>
+              <span class="tag">Figma</span>
+              <span class="tag">Web UI</span>
+              <span class="tag">SEO</span>
+            </div>
+          </section>
+
+          <section class="section-card">
+            <div class="section-head">
+              <h2 class="section-title">个人亮点</h2>
+              <span class="section-badge">优点</span>
+            </div>
+            <div class="mini-grid">
+              <div class="stat-box">
+                <span class="stat-num">3+</span>
+                <span class="stat-label">大型项目经验</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-num">30%</span>
+                <span class="stat-label">页面性能提升</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-num">8</span>
+                <span class="stat-label">获奖 / 证书</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-num">2</span>
+                <span class="stat-label">团队协作方向</span>
+              </div>
+            </div>
+          </section>
+        </aside>
+      </main>
+    </div>
+  </body>
+</html>
