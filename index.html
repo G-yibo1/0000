@@ -3,54 +3,56 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>郭一博个人简历</title>
+    <title>郭一博 | 品牌设计 · UI · APP 前端</title>
     <style>
       :root {
-        --bg1: #f4f7ff;
-        --bg2: #eef7ff;
-        --card: rgba(255, 255, 255, 0.82);
-        --line: #dfe8ff;
-        --primary: #2457f7;
-        --primary-dark: #183bb8;
-        --secondary: #7b8cff;
-        --text: #1d2433;
-        --muted: #667085;
-        --success: #2bb673;
-        --warning: #ffbf47;
-        --shadow: 0 20px 40px rgba(36, 87, 247, 0.1);
+        --bg-1: #090909;
+        --bg-2: #151515;
+        --bg-3: #241d12;
+        --card: rgba(24, 24, 24, 0.9);
+        --card-strong: #1c1c1c;
+        --primary: #d6ad55;
+        --primary-dark: #f0d487;
+        --secondary: #b88932;
+        --accent: #f4d98a;
+        --text: #f5efe1;
+        --muted: #b8af9e;
+        --line: rgba(214, 173, 85, 0.28);
+        --shadow: 0 24px 65px rgba(0, 0, 0, 0.46);
       }
 
       * { box-sizing: border-box; }
-
       html { scroll-behavior: smooth; }
-
       body {
         margin: 0;
-        font-family: "Microsoft YaHei", "Segoe UI", sans-serif;
+        font-family: "Microsoft YaHei", "Noto Sans SC", sans-serif;
         color: var(--text);
         background:
-          radial-gradient(circle at top left, rgba(110, 143, 255, 0.18), transparent 34%),
-          radial-gradient(circle at bottom right, rgba(75, 197, 255, 0.18), transparent 30%),
-          linear-gradient(135deg, var(--bg1), var(--bg2));
+          radial-gradient(circle at 12% 8%, rgba(232, 199, 115, 0.3), transparent 24%),
+          radial-gradient(circle at 88% 92%, rgba(217, 121, 97, 0.18), transparent 28%),
+          linear-gradient(135deg, var(--bg-1), var(--bg-2) 55%, var(--bg-3));
       }
 
+      a { color: inherit; text-decoration: none; }
+      img { max-width: 100%; display: block; }
+
       .page {
-        width: min(1180px, calc(100% - 32px));
-        margin: 36px auto;
-        padding: 26px;
-        background: rgba(255, 255, 255, 0.46);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255,255,255,0.5);
-        border-radius: 28px;
+        width: min(1200px, calc(100% - 26px));
+        margin: 26px auto 42px;
+        padding: 22px 22px 28px;
+        background: rgba(255,252,246,0.52);
+        border: 1px solid rgba(255,255,255,0.72);
+        border-radius: 8px;
         box-shadow: var(--shadow);
+        backdrop-filter: blur(8px);
       }
 
       .topbar {
         display: flex;
-        justify-content: space-between;
         align-items: center;
-        gap: 20px;
-        padding: 8px 12px 22px;
+        justify-content: space-between;
+        gap: 18px;
+        padding: 6px 8px 18px;
         border-bottom: 1px solid var(--line);
       }
 
@@ -58,8 +60,8 @@
         display: flex;
         align-items: center;
         gap: 12px;
-        font-weight: 700;
-        letter-spacing: 1px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
       }
 
       .brand-mark {
@@ -68,592 +70,1899 @@
         border-radius: 14px;
         display: grid;
         place-items: center;
-        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        background: var(--primary);
         color: #fff;
-        font-size: 20px;
-        box-shadow: 0 12px 24px rgba(36,87,247,0.28);
+        box-shadow: 0 18px 30px rgba(47, 98, 95, 0.24);
       }
 
-      .tagline {
+      .brand-meta {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+
+      .brand-meta small {
         color: var(--muted);
-        font-size: 13px;
+        letter-spacing: 0.14em;
+        font-size: 10px;
+        font-weight: 700;
       }
 
-      .header {
-        display: grid;
-        grid-template-columns: 1.4fr 0.8fr;
-        gap: 28px;
-        padding: 28px 10px 10px;
-      }
-
-      .profile-card, .side-card, .section-card, .project-card, .timeline-item, .skill-card {
-        background: var(--card);
-        border: 1px solid rgba(157, 172, 255, 0.28);
-        border-radius: 24px;
-        box-shadow: 0 18px 28px rgba(17, 30, 84, 0.06);
-      }
-
-      .profile-card {
-        padding: 28px;
+      .nav-wrap {
         display: flex;
         align-items: center;
-        gap: 24px;
-        background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(231,238,255,0.9));
+        gap: 18px;
       }
 
-      .avatar {
-        width: 120px;
-        height: 120px;
-        min-width: 120px;
-        border-radius: 30px;
-        background: linear-gradient(135deg, #1e3de2, #7ab7ff);
-        display: grid;
-        place-items: center;
-        font-size: 34px;
+      .main-nav {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      .main-nav a {
+        color: var(--muted);
+        font-size: 0.9rem;
         font-weight: 700;
+        padding: 8px 10px;
+        border-radius: 10px;
+        transition: 0.2s ease;
+      }
+
+      .main-nav a:hover {
+        color: var(--primary-dark);
+        background: rgba(66,99,235,0.06);
+      }
+
+      .lang-switch {
+        display: inline-flex;
+        padding: 6px;
+        border-radius: 999px;
+        background: rgba(66,99,235,0.06);
+        border: 1px solid rgba(66,99,235,0.1);
+      }
+
+      .lang-switch button {
+        border: 0;
+        background: transparent;
+        color: var(--muted);
+        font-weight: 700;
+        padding: 8px 12px;
+        border-radius: 999px;
+        cursor: pointer;
+        transition: 0.2s ease;
+      }
+
+      .lang-switch button.active {
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
         color: #fff;
-        box-shadow: 0 16px 30px rgba(35, 19, 94, 0.18);
+        box-shadow: 0 12px 20px rgba(66,99,235,0.2);
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: 1.2fr 0.85fr;
+        gap: 28px;
+        padding: 28px 8px 10px;
+      }
+
+      .hero-copy {
+        background: linear-gradient(135deg, rgba(255,252,246,0.88), rgba(231,236,232,0.86));
+        border: 1px solid rgba(47,98,95,0.14);
+        border-radius: 8px;
+        padding: 28px 28px 22px;
+        box-shadow: 0 18px 28px rgba(29, 39, 76, 0.05);
+      }
+
+      .eyebrow {
+        display: inline-block;
+        margin: 0 0 12px;
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: rgba(47,98,95,0.1);
+        color: var(--primary-dark);
+        font-size: 0.76rem;
+        letter-spacing: 0.12em;
+        font-weight: 800;
+        text-transform: uppercase;
       }
 
       h1 {
         margin: 0;
-        font-size: clamp(2rem, 3vw, 3.1rem);
-        line-height: 1.1;
+        font-size: clamp(2.5rem, 4vw, 4.3rem);
+        line-height: 1.04;
+        letter-spacing: -0.04em;
       }
 
-      .title {
-        margin: 8px 0 18px;
-        color: var(--primary-dark);
-        font-weight: 700;
-        letter-spacing: 0.06em;
-        font-size: 0.95rem;
-      }
-
-      .intro {
-        margin: 0;
+      .subtitle {
+        margin: 16px 0 0;
         color: var(--muted);
-        line-height: 1.8;
-        max-width: 620px;
+        line-height: 1.9;
+        font-size: 1rem;
+        max-width: 700px;
       }
 
-      .meta-row {
+      .cta-bar {
         display: flex;
         flex-wrap: wrap;
-        gap: 10px;
+        gap: 12px;
         margin-top: 22px;
       }
 
-      .pill {
-        padding: 8px 12px;
-        border-radius: 999px;
-        background: rgba(36, 87, 247, 0.08);
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 18px;
+        border-radius: 14px;
+        font-weight: 800;
+        border: 1px solid transparent;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .btn:hover { transform: translateY(-1px); }
+      .btn-primary {
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        color: #fff;
+        box-shadow: 0 16px 24px rgba(66,99,235,0.21);
+      }
+      .btn-secondary {
+        background: rgba(255,255,255,0.5);
+        border-color: rgba(66,99,235,0.12);
         color: var(--primary-dark);
-        font-size: 12px;
-        font-weight: 700;
-        border: 1px solid rgba(36,87,247,0.12);
       }
 
-      .side-card {
-        padding: 24px 20px;
+      .stat-row {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 24px;
       }
 
-      .contact-list {
-        list-style: none;
-        margin: 0;
-        padding: 0;
+      .stat-box {
+        padding: 16px 14px;
+        border-radius: 18px;
+        background: rgba(255,255,255,0.7);
+        border: 1px solid rgba(125, 150, 255, 0.14);
+      }
+
+      .stat-box strong {
+        display: block;
+        font-size: clamp(1.3rem, 2vw, 2rem);
+        font-weight: 900;
+        color: var(--primary-dark);
+      }
+
+      .stat-box span {
+        color: var(--muted);
+        font-size: 0.82rem;
+      }
+
+      .visual-wrap {
+        position: relative;
+        min-height: 440px;
+        display: grid;
+        place-items: center;
+        background: linear-gradient(180deg, rgba(255,255,255,0.8), rgba(234,240,255,0.9));
+        border: 1px solid rgba(143,168,255,0.18);
+        border-radius: 30px;
+        overflow: hidden;
+        box-shadow: 0 20px 30px rgba(37, 50, 100, 0.07);
+      }
+
+      .glow {
+        position: absolute;
+        width: 320px;
+        height: 320px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(117,161,255,0.5), rgba(117,161,255,0.1) 45%, transparent 70%);
+        filter: blur(10px);
+      }
+
+      .device-card {
+        position: relative;
+        width: min(430px, 88%);
+        background: #fff;
+        border: 1px solid rgba(88,108,191,0.14);
+        border-radius: 28px;
+        box-shadow: 0 25px 45px rgba(43, 63, 136, 0.15);
+        padding: 18px;
+        z-index: 2;
+      }
+
+      .device-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 18px;
+      }
+
+      .dots {
+        display: flex;
+        gap: 8px;
+      }
+      .dots span {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        display: block;
+      }
+      .dots span:nth-child(1) { background: #ff6178; }
+      .dots span:nth-child(2) { background: #ffc857; }
+      .dots span:nth-child(3) { background: #46d39a; }
+
+      .mini-tag {
+        padding: 8px 10px;
+        border-radius: 999px;
+        background: rgba(66,99,235,0.08);
+        color: var(--primary-dark);
+        font-size: 0.72rem;
+        font-weight: 800;
+      }
+
+      .dashboard {
         display: grid;
         gap: 14px;
       }
 
-      .contact-list li {
+      .dashboard-head {
         display: flex;
+        justify-content: space-between;
         align-items: center;
+        gap: 10px;
+      }
+
+      .dashboard-head h3 {
+        margin: 0;
+        font-size: 1rem;
+      }
+
+      .status-badge {
+        padding: 7px 10px;
+        border-radius: 999px;
+        background: rgba(70,211,154,0.12);
+        color: #1f9d68;
+        font-size: 0.72rem;
+        font-weight: 800;
+      }
+
+      .chart-card {
+        height: 140px;
+        border-radius: 18px;
+        background: linear-gradient(180deg, rgba(66,99,235,0.08), rgba(120,175,255,0.2));
+        border: 1px solid rgba(117, 152, 255, 0.12);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .chart-card svg {
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+
+      .mini-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 12px;
-        color: var(--text);
-        font-size: 0.96rem;
       }
 
-      .contact-icon {
-        width: 34px;
-        height: 34px;
-        border-radius: 12px;
-        display: grid;
-        place-items: center;
-        background: rgba(36, 87, 247, 0.08);
+      .mini-panel {
+        border-radius: 16px;
+        padding: 12px;
+        background: rgba(246,248,255,0.9);
+        border: 1px solid rgba(72,87,161,0.09);
+      }
+
+      .mini-panel .num {
+        display: block;
+        font-size: 1.2rem;
+        font-weight: 900;
         color: var(--primary-dark);
-        font-size: 1.15rem;
       }
 
-      .content {
-        display: grid;
-        grid-template-columns: 1.4fr 0.8fr;
-        gap: 24px;
-        margin-top: 12px;
+      .mini-panel .txt {
+        display: block;
+        color: var(--muted);
+        font-size: 0.73rem;
+        margin-top: 2px;
       }
 
-      .left, .right {
-        display: grid;
-        gap: 22px;
+      .floating-card {
+        position: absolute;
+        right: 16px;
+        bottom: 22px;
+        width: 150px;
+        padding: 14px 12px;
+        background: rgba(255,255,255,0.85);
+        border: 1px solid rgba(121, 141, 216, 0.12);
+        border-radius: 18px;
+        box-shadow: 0 16px 30px rgba(46, 69, 161, 0.12);
+        z-index: 3;
+      }
+
+      .floating-card .label {
+        display: block;
+        color: var(--muted);
+        font-size: 0.7rem;
+      }
+
+      .floating-card strong {
+        display: block;
+        font-size: 1.3rem;
+        color: var(--primary-dark);
+        margin-top: 4px;
+      }
+
+      .section {
+        margin-top: 22px;
       }
 
       .section-card {
-        padding: 22px 22px 18px;
+        background: rgba(255,252,246,0.78);
+        border: 1px solid rgba(47,98,95,0.14);
+        border-radius: 8px;
+        padding: 24px 22px 20px;
+        box-shadow: 0 14px 26px rgba(19, 31, 75, 0.04);
       }
 
       .section-head {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin-bottom: 16px;
-      }
-
-      .section-title {
-        margin: 0;
-        font-size: 1.12rem;
-        letter-spacing: 0.08em;
-        color: var(--primary-dark);
-      }
-
-      .section-badge {
-        padding: 5px 10px;
-        border-radius: 999px;
-        background: rgba(36, 87, 247, 0.08);
-        color: var(--primary);
-        font-size: 11px;
-        font-weight: 700;
-      }
-
-      .timeline {
-        position: relative;
-        padding-left: 10px;
-      }
-
-      .timeline::before {
-        content: "";
-        position: absolute;
-        left: 9px;
-        top: 10px;
-        bottom: 14px;
-        width: 2px;
-        background: linear-gradient(180deg, rgba(36,87,247,0.8), rgba(36,87,247,0.15));
-      }
-
-      .timeline-item {
-        position: relative;
-        margin-left: 24px;
-        padding: 18px 18px 16px 18px;
-        margin-bottom: 14px;
-      }
-
-      .timeline-item::before {
-        content: "";
-        position: absolute;
-        left: -25px;
-        top: 22px;
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        background: linear-gradient(135deg, var(--primary), #79b3ff);
-        box-shadow: 0 0 0 4px rgba(36,87,247,0.1);
-      }
-
-      .timeline-top {
-        display: flex;
-        justify-content: space-between;
-        gap: 18px;
-        flex-wrap: wrap;
-        margin-bottom: 8px;
-      }
-
-      .role {
-        margin: 0;
-        font-size: 1.04rem;
-      }
-
-      .time {
-        color: var(--muted);
-        font-size: 0.86rem;
-        white-space: nowrap;
-      }
-
-      .company {
-        margin: 0 0 10px;
-        color: var(--primary-dark);
-        font-weight: 700;
-      }
-
-      .desc {
-        margin: 0;
-        color: var(--muted);
-        line-height: 1.8;
-      }
-
-      .project-grid {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 14px;
-      }
-
-      .project-card {
-        padding: 18px 18px 16px;
-      }
-
-      .project-card h4 {
-        margin: 0 0 8px;
-        font-size: 1.02rem;
-      }
-
-      .project-card p {
-        margin: 0;
-        color: var(--muted);
-        line-height: 1.7;
-        font-size: 0.92rem;
-      }
-
-      .project-tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-        margin-top: 12px;
-      }
-
-      .project-tags span {
-        padding: 6px 9px;
-        border-radius: 999px;
-        background: rgba(123, 140, 255, 0.1);
-        color: var(--primary-dark);
-        font-size: 12px;
-      }
-
-      .skill-list {
-        display: grid;
         gap: 12px;
+        margin-bottom: 18px;
       }
 
-      .skill-item {
-        display: grid;
-        gap: 8px;
+      .section-head h2 {
+        margin: 0;
+        font-size: clamp(1.2rem, 2vw, 1.6rem);
+        letter-spacing: 0.04em;
       }
 
-      .skill-head {
-        display: flex;
-        justify-content: space-between;
-        font-size: 0.94rem;
-        color: var(--text);
-      }
-
-      .bar {
-        height: 10px;
-        background: rgba(125, 136, 255, 0.12);
+      .section-tag {
+        padding: 7px 10px;
         border-radius: 999px;
-        overflow: hidden;
+        background: rgba(66,99,235,0.08);
+        color: var(--primary-dark);
+        font-size: 0.72rem;
+        font-weight: 800;
       }
 
-      .fill {
-        height: 100%;
-        border-radius: inherit;
-        background: linear-gradient(90deg, var(--primary), #7fb1ff);
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 24px;
       }
 
-      .fill-90 { width: 90%; }
-      .fill-85 { width: 85%; }
-      .fill-80 { width: 80%; }
-      .fill-75 { width: 75%; }
+      .about-copy {
+        display: grid;
+        gap: 16px;
+        color: var(--muted);
+        line-height: 1.9;
+      }
 
-      .tag-cloud {
+      .skill-tags {
         display: flex;
         flex-wrap: wrap;
         gap: 10px;
       }
 
-      .tag {
+      .skill-tags span {
         padding: 9px 12px;
-        font-size: 0.85rem;
         border-radius: 999px;
-        background: linear-gradient(135deg, rgba(36,87,247,0.08), rgba(123, 140, 255, 0.14));
+        background: linear-gradient(135deg, rgba(66,99,235,0.08), rgba(122,169,255,0.16));
+        border: 1px solid rgba(66,99,235,0.12);
         color: var(--primary-dark);
-        border: 1px solid rgba(36,87,247,0.1);
+        font-weight: 700;
+        font-size: 0.85rem;
       }
 
-      .mini-grid {
+      .process-list {
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 12px;
       }
 
-      .stat-box {
-        padding: 16px 14px;
-        border-radius: 18px;
-        background: linear-gradient(135deg, rgba(36,87,247,0.06), rgba(123,140,255,0.12));
-        border: 1px solid rgba(36,87,247,0.08);
+      .process-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 14px 14px;
+        background: rgba(246,248,255,0.9);
+        border-radius: 16px;
+        border: 1px solid rgba(118, 135, 224, 0.08);
       }
 
-      .stat-num {
-        display: block;
-        font-size: 1.8rem;
+      .step {
+        width: 30px;
+        height: 30px;
+        border-radius: 10px;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        color: #fff;
+        display: grid;
+        place-items: center;
         font-weight: 800;
+      }
+
+      .projects {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      #works .section-card {
+        background: #1d2927;
+        color: #fffaf1;
+        border-color: transparent;
+      }
+
+      #works .section-tag {
+        background: rgba(232,199,115,0.16);
+        color: #e8c773;
+      }
+
+      .project-card {
+        background: #fffaf1;
+        border: 1px solid rgba(232,199,115,0.24);
+        border-radius: 22px;
+        overflow: hidden;
+        box-shadow: 0 12px 25px rgba(20, 35, 78, 0.04);
+      }
+
+      .project-visual {
+        height: 180px;
+        padding: 18px;
+        background: #e8c773;
+        border-bottom: 1px solid rgba(29,41,39,0.12);
+        position: relative;
+      }
+
+      .mock-window {
+        position: absolute;
+        inset: 18px;
+        border-radius: 18px;
+        background: rgba(255,255,255,0.7);
+        border: 1px solid rgba(97, 115, 196, 0.12);
+        overflow: hidden;
+      }
+
+      .pdf-page {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+        background: #f8f3ea;
+        transform: scale(1.01);
+        transform-origin: center;
+      }
+
+      .mock-window .topline {
+        height: 32px;
+        background: rgba(66,99,235,0.06);
+        border-bottom: 1px solid rgba(98,109,176,0.08);
+        padding: 8px 12px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .mock-window .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        display: inline-block;
+      }
+
+      .mock-window .dot:nth-child(1) { background: #ff6178; }
+      .mock-window .dot:nth-child(2) { background: #ffc857; }
+      .mock-window .dot:nth-child(3) { background: #46d39a; }
+
+      .mock-content {
+        height: calc(100% - 32px);
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        padding: 12px;
+        gap: 12px;
+      }
+
+      .panel-left, .panel-right {
+        border-radius: 12px;
+        background: rgba(143, 168, 255, 0.08);
+        border: 1px solid rgba(97, 115, 196, 0.08);
+      }
+
+      .panel-right {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        gap: 10px;
+      }
+
+      .panel-right .mini-block {
+        border-radius: 12px;
+        background: linear-gradient(135deg, rgba(66,99,235,0.12), rgba(122,169,255,0.18));
+      }
+
+      .project-body {
+        padding: 18px 18px 20px;
+      }
+
+      .project-body h3 {
+        margin: 0 0 8px;
+        font-size: 1.12rem;
+      }
+
+      #works .project-body h3 {
         color: var(--primary-dark);
       }
 
-      .stat-label {
-        font-size: 0.85rem;
+      .project-feature {
+        display: grid;
+        grid-template-columns: 1.4fr 0.6fr;
+        gap: 24px;
+        margin-top: 24px;
+        padding: 28px;
+        background: #e7ece8;
+        color: var(--text);
+        border-left: 5px solid var(--secondary);
+      }
+
+      .project-case + .project-case {
+        margin-top: 14px;
+      }
+
+      .project-case-two {
+        background: #eee5c4;
+        border-left-color: #c1b36c;
+      }
+
+      .project-case-three {
+        background: #ead4d0;
+        border-left-color: #c98383;
+      }
+
+      .project-case-two .project-kicker {
+        color: #91843b;
+      }
+
+      .project-case-three .project-kicker {
+        color: #ad6868;
+      }
+
+      .project-kicker,
+      .gallery-heading span {
+        color: var(--secondary);
+        font-size: 0.72rem;
+        font-weight: 900;
+        letter-spacing: 0.16em;
+      }
+
+      .project-feature h3 {
+        margin: 10px 0 12px;
+        font-size: clamp(1.35rem, 2.4vw, 2rem);
+        color: var(--primary-dark);
+      }
+
+      .project-feature p {
+        max-width: 720px;
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.9;
+      }
+
+      .feature-points {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 18px 0 22px;
+      }
+
+      .feature-points span {
+        padding: 7px 10px;
+        background: rgba(47,98,95,0.1);
+        color: var(--primary-dark);
+        font-size: 0.75rem;
+        font-weight: 800;
+      }
+
+      .project-feature-note {
+        padding-left: 22px;
+        border-left: 1px solid rgba(47,98,95,0.18);
+      }
+
+      .project-feature-note strong {
+        display: block;
+        margin-bottom: 5px;
+        color: var(--primary-dark);
+        font-size: 0.82rem;
+        letter-spacing: 0.08em;
+      }
+
+      .project-feature-note strong + p {
+        margin-bottom: 20px;
+      }
+
+      .project-gallery {
+        margin-top: 30px;
+      }
+
+      .gallery-heading {
+        display: flex;
+        align-items: baseline;
+        gap: 14px;
+        margin-bottom: 14px;
+      }
+
+      .gallery-heading small {
+        color: rgba(255,250,241,0.62);
+      }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .gallery-page {
+        width: 100%;
+        height: 180px;
+        border: 1px solid rgba(232,199,115,0.3);
+        background: #f8f3ea;
+        box-shadow: 0 12px 24px rgba(0,0,0,0.16);
+      }
+
+      .gallery-page-tall {
+        height: 240px;
+      }
+
+      .project-body p {
+        margin: 0 0 14px;
+        color: var(--muted);
+        line-height: 1.8;
+      }
+
+      .project-link {
+        margin-top: 16px;
+        font-size: 0.82rem;
+      }
+
+      .taglist {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .taglist span {
+        padding: 6px 9px;
+        border-radius: 999px;
+        background: rgba(66,99,235,0.06);
+        color: var(--primary-dark);
+        font-size: 0.72rem;
+        font-weight: 700;
+      }
+
+      .timeline-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+      }
+
+      .time-card {
+        position: relative;
+        padding: 18px 18px 18px 22px;
+        background: rgba(255,255,255,0.75);
+        border: 1px solid rgba(118, 135, 224, 0.12);
+        border-radius: 18px;
+        box-shadow: 0 12px 24px rgba(18,31,64,0.03);
+      }
+
+      .time-card::before {
+        content: "";
+        position: absolute;
+        left: 10px;
+        top: 22px;
+        bottom: 22px;
+        width: 2px;
+        background: linear-gradient(180deg, rgba(66,99,235,0.7), rgba(66,99,235,0.1));
+      }
+
+      .time-card .item {
+        position: relative;
+        margin-left: 16px;
+        padding-left: 18px;
+      }
+
+      .time-card .item::before {
+        content: "";
+        position: absolute;
+        left: -5px;
+        top: 10px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        box-shadow: 0 0 0 4px rgba(66,99,235,0.08);
+      }
+
+      .time-card .item + .item {
+        margin-top: 18px;
+      }
+
+      .time-card h3 {
+        margin: 0 0 6px;
+        font-size: 1.08rem;
+      }
+
+      .time-card .meta {
+        color: var(--muted);
+        font-size: 0.82rem;
+        margin-bottom: 8px;
+      }
+
+      .time-card p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.8;
+      }
+
+      .contact-box {
+        display: grid;
+        grid-template-columns: 1.3fr 0.7fr;
+        gap: 20px;
+        align-items: center;
+      }
+
+      .contact-copy {
+        color: var(--muted);
+        line-height: 1.9;
+      }
+
+      .contact-card {
+        background: linear-gradient(135deg, rgba(66,99,235,0.08), rgba(122,169,255,0.12));
+        border: 1px solid rgba(66,99,235,0.08);
+        border-radius: 20px;
+        padding: 18px;
+      }
+
+      .contact-card ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 10px;
+      }
+
+      .contact-card li {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--text);
+        font-weight: 700;
+      }
+
+      .contact-icon {
+        width: 30px;
+        height: 30px;
+        display: grid;
+        place-items: center;
+        border-radius: 10px;
+        background: rgba(255,255,255,0.7);
+      }
+
+      .lang-en, .lang-zh {
+        display: block;
+      }
+
+      /* Portfolio palette: muted teal with paper yellow, blush pink, and sage accents. */
+      .main-nav a:hover,
+      .lang-switch,
+      .section-tag,
+      .mini-tag,
+      .taglist span {
+        background: rgba(91,129,125,0.12);
+        color: var(--primary-dark);
+      }
+
+      .lang-switch {
+        border-color: rgba(91,129,125,0.18);
+      }
+
+      .lang-switch button.active,
+      .btn-primary,
+      .step,
+      .brand-mark {
+        background: var(--primary);
+        box-shadow: 0 12px 22px rgba(91,129,125,0.24);
+      }
+
+      .btn-secondary {
+        background: rgba(255,255,255,0.58);
+        border-color: rgba(91,129,125,0.22);
+        color: var(--primary-dark);
+      }
+
+      .stat-box,
+      .process-item,
+      .time-card,
+      .contact-card {
+        background: rgba(255,250,226,0.66);
+        border-color: rgba(91,129,125,0.18);
+      }
+
+      .skill-tags span,
+      .feature-points span {
+        background: rgba(230,165,165,0.24);
+        border-color: rgba(230,165,165,0.35);
+        color: var(--primary-dark);
+      }
+
+      .visual-wrap {
+        background: linear-gradient(180deg, rgba(255,250,226,0.88), rgba(211,226,215,0.9));
+        border-color: rgba(91,129,125,0.2);
+      }
+
+      .glow {
+        background: radial-gradient(circle, rgba(230,165,165,0.44), rgba(240,223,155,0.24) 45%, transparent 70%);
+      }
+
+      .chart-card {
+        background: linear-gradient(180deg, rgba(91,129,125,0.12), rgba(230,165,165,0.2));
+        border-color: rgba(91,129,125,0.16);
+      }
+
+      .mini-panel {
+        background: rgba(255,250,226,0.76);
+        border-color: rgba(91,129,125,0.14);
+      }
+
+      .panel-left,
+      .panel-right {
+        background: rgba(91,129,125,0.1);
+        border-color: rgba(91,129,125,0.14);
+      }
+
+      .panel-right .mini-block {
+        background: linear-gradient(135deg, rgba(91,129,125,0.18), rgba(230,165,165,0.28));
+      }
+
+      .time-card::before {
+        background: linear-gradient(180deg, rgba(91,129,125,0.8), rgba(230,165,165,0.18));
+      }
+
+      .time-card .item::before {
+        background: var(--primary);
+        box-shadow: 0 0 0 4px rgba(91,129,125,0.14);
+      }
+
+      .contact-card {
+        background: linear-gradient(135deg, rgba(91,129,125,0.14), rgba(230,165,165,0.2));
+      }
+
+      #works .section-card {
+        background: var(--primary-dark);
+      }
+
+      #works .section-tag {
+        background: rgba(240,223,155,0.22);
+        color: #f0df9b;
+      }
+
+      .project-feature {
+        background: #dbe5da;
+        border-left-color: var(--secondary);
+      }
+
+      .project-kicker,
+      .gallery-heading span {
+        color: #c98383;
+      }
+
+      .gallery-page {
+        border-color: rgba(240,223,155,0.42);
+      }
+
+      /* Black and gold art direction. */
+      body {
+        background:
+          radial-gradient(circle at 8% 0%, rgba(214,173,85,0.13), transparent 26%),
+          radial-gradient(circle at 92% 100%, rgba(184,137,50,0.1), transparent 28%),
+          linear-gradient(135deg, var(--bg-1), var(--bg-2) 58%, var(--bg-3));
+      }
+
+      .page {
+        background: rgba(13,13,13,0.84);
+        border-color: rgba(214,173,85,0.18);
+      }
+
+      .topbar {
+        border-bottom-color: rgba(214,173,85,0.24);
+      }
+
+      .brand-mark,
+      .lang-switch button.active,
+      .btn-primary,
+      .step {
+        background: linear-gradient(135deg, #f0d487, #b88932);
+        color: #17130b;
+        box-shadow: 0 14px 28px rgba(184,137,50,0.24);
+      }
+
+      .main-nav a,
+      .brand-meta small,
+      .subtitle,
+      .about-copy,
+      .contact-copy,
+      .time-card p,
+      .project-body p {
         color: var(--muted);
       }
 
-      @media (max-width: 900px) {
-        .header, .content {
-          grid-template-columns: 1fr;
-        }
+      .main-nav a:hover,
+      .lang-switch,
+      .section-tag,
+      .mini-tag,
+      .taglist span {
+        background: rgba(214,173,85,0.12);
+        color: var(--primary-dark);
+      }
 
-        .topbar {
-          flex-direction: column;
-          align-items: flex-start;
+      .lang-switch {
+        border-color: rgba(214,173,85,0.28);
+      }
+
+      .hero-copy,
+      .section-card,
+      .project-card,
+      .time-card {
+        background: rgba(25,25,25,0.88);
+        border-color: rgba(214,173,85,0.2);
+      }
+
+      .hero-copy {
+        background: linear-gradient(135deg, rgba(29,29,29,0.94), rgba(43,35,20,0.84));
+      }
+
+      .eyebrow,
+      .stat-box,
+      .process-item,
+      .mini-panel,
+      .contact-card {
+        background: rgba(214,173,85,0.09);
+        border-color: rgba(214,173,85,0.2);
+      }
+
+      .stat-box strong,
+      .floating-card strong,
+      .section-head h2,
+      .project-body h3,
+      .time-card h3,
+      .project-feature h3,
+      .project-feature-note strong {
+        color: var(--primary-dark);
+      }
+
+      .btn-secondary {
+        background: rgba(214,173,85,0.08);
+        border-color: rgba(214,173,85,0.4);
+        color: var(--primary-dark);
+      }
+
+      .visual-wrap {
+        background: linear-gradient(180deg, #252525, #161616);
+        border-color: rgba(214,173,85,0.25);
+      }
+
+      .glow {
+        background: radial-gradient(circle, rgba(214,173,85,0.32), rgba(184,137,50,0.1) 45%, transparent 70%);
+      }
+
+      .device-card,
+      .floating-card {
+        background: #202020;
+        border-color: rgba(214,173,85,0.22);
+      }
+
+      .chart-card {
+        background: linear-gradient(180deg, rgba(214,173,85,0.16), rgba(184,137,50,0.06));
+        border-color: rgba(214,173,85,0.2);
+      }
+
+      .skill-tags span,
+      .feature-points span {
+        background: rgba(214,173,85,0.12);
+        border-color: rgba(214,173,85,0.3);
+        color: var(--primary-dark);
+      }
+
+      .time-card::before {
+        background: linear-gradient(180deg, #d6ad55, rgba(214,173,85,0.08));
+      }
+
+      .time-card .item::before {
+        background: #d6ad55;
+        box-shadow: 0 0 0 4px rgba(214,173,85,0.14);
+      }
+
+      #works .section-card {
+        background: #111;
+      }
+
+      #works .section-tag {
+        background: rgba(214,173,85,0.18);
+        color: #f0d487;
+      }
+
+      .project-visual {
+        background: #242424 !important;
+        border-bottom-color: rgba(214,173,85,0.2);
+      }
+
+      .project-feature,
+      .project-case-two,
+      .project-case-three {
+        background: #1d1d1d;
+        border-left-color: #d6ad55;
+      }
+
+      .project-case-two {
+        background: #242016;
+      }
+
+      .project-case-three {
+        background: #241b1b;
+      }
+
+      .project-kicker,
+      .gallery-heading span {
+        color: #e0b95f;
+      }
+
+      .gallery-heading small,
+      .project-feature p,
+      .project-feature-note p {
+        color: #b8af9e;
+      }
+
+      .contact-card li,
+      .contact-icon {
+        color: var(--text);
+      }
+
+      .contact-icon {
+        background: rgba(214,173,85,0.14);
+      }
+
+      .project-scene {
+        position: relative;
+        min-height: 520px;
+        margin: 0 0 28px;
+        padding: 26px 28px 20px;
+        overflow: hidden;
+        isolation: isolate;
+        border: 1px solid rgba(214,173,85,0.28);
+        background: radial-gradient(circle at 50% 25%, rgba(214,173,85,0.12), transparent 34%), #080808;
+        outline: none;
+        animation: sceneReveal 0.9s cubic-bezier(.2,.75,.25,1) both;
+      }
+
+      @keyframes sceneReveal {
+        from { opacity: 0; transform: translateY(24px) scale(0.98); }
+        to { opacity: 1; transform: translateY(0) scale(1); }
+      }
+
+      @keyframes sceneLight {
+        0%, 100% { transform: translateX(-12%) rotate(18deg); opacity: 0.12; }
+        50% { transform: translateX(12%) rotate(18deg); opacity: 0.28; }
+      }
+
+      .project-scene:focus-visible {
+        box-shadow: 0 0 0 3px rgba(240,212,135,0.7);
+      }
+
+      .scene-copy {
+        position: relative;
+        z-index: 5;
+        max-width: 320px;
+      }
+
+      .scene-copy h3 {
+        margin: 8px 0 6px;
+        color: #f0d487;
+        font-size: clamp(1.35rem, 2.6vw, 2rem);
+      }
+
+      .scene-copy p {
+        margin: 0;
+        color: #a99e8b;
+        font-size: 0.86rem;
+      }
+
+      .scene-stage {
+        position: relative;
+        height: 390px;
+        margin-top: -22px;
+        perspective: 1100px;
+        transform-style: preserve-3d;
+        transition: transform 0.25s ease-out;
+      }
+
+      .scene-stage::before,
+      .scene-stage::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 43%;
+        width: 300px;
+        height: 300px;
+        transform: translate(-50%, -50%);
+        border: 1px solid rgba(214,173,85,0.12);
+        border-radius: 50%;
+        box-shadow: 0 0 0 48px rgba(214,173,85,0.025), 0 0 0 96px rgba(214,173,85,0.018);
+      }
+
+      .scene-stage::before {
+        animation: sceneLight 7s ease-in-out infinite;
+      }
+
+      .scene-stage::after {
+        width: 520px;
+        height: 180px;
+        border-radius: 50%;
+        border-color: rgba(214,173,85,0.08);
+        box-shadow: none;
+      }
+
+      .scene-floor {
+        position: absolute;
+        left: 8%;
+        right: 8%;
+        bottom: 28px;
+        height: 120px;
+        transform: rotateX(66deg) translateZ(-20px);
+        transform-origin: bottom;
+        background: linear-gradient(90deg, transparent, rgba(214,173,85,0.12), transparent);
+        border-top: 1px solid rgba(214,173,85,0.3);
+        box-shadow: 0 -30px 55px rgba(214,173,85,0.08);
+      }
+
+      .scene-card {
+        position: absolute;
+        top: 105px;
+        left: 50%;
+        width: 190px;
+        height: 238px;
+        padding: 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        text-align: left;
+        color: #f5efe1;
+        cursor: pointer;
+        transform-style: preserve-3d;
+        border: 1px solid rgba(240,212,135,0.36);
+        background: linear-gradient(145deg, #29251b, #11100d);
+        box-shadow: 0 30px 36px rgba(0,0,0,0.42);
+        transition: transform 0.45s ease, filter 0.45s ease, opacity 0.45s ease, box-shadow 0.45s ease;
+      }
+
+      .scene-card-image::after {
+        content: "";
+        position: absolute;
+        inset: -30% 35%;
+        background: linear-gradient(90deg, transparent, rgba(255,245,190,0.38), transparent);
+        transform: rotate(20deg);
+        animation: cardSheen 5s ease-in-out infinite;
+      }
+
+      @keyframes cardSheen {
+        0%, 35% { translate: -120% 0; }
+        70%, 100% { translate: 120% 0; }
+      }
+
+      .scene-card::after {
+        content: "";
+        position: absolute;
+        inset: 8px;
+        border: 1px solid rgba(240,212,135,0.12);
+        pointer-events: none;
+      }
+
+      .scene-card:hover,
+      .scene-card:focus-visible {
+        box-shadow: 0 28px 44px rgba(214,173,85,0.2);
+        outline: none;
+      }
+
+      .scene-card-one {
+        transform: translateX(-50%) translateZ(90px) rotateY(-3deg);
+        z-index: 3;
+      }
+
+      .scene-card-two {
+        transform: translateX(-142%) translateZ(-20px) rotateY(15deg) scale(0.84);
+        filter: saturate(0.7) brightness(0.78);
+        z-index: 2;
+      }
+
+      .scene-card-three {
+        transform: translateX(42%) translateZ(-20px) rotateY(-15deg) scale(0.84);
+        filter: saturate(0.7) brightness(0.78);
+        z-index: 2;
+      }
+
+      .scene-card.is-active {
+        filter: none;
+      }
+
+      .scene-card-one.is-active { transform: translateX(-50%) translateZ(130px) rotateY(-3deg) scale(1.05); }
+      .scene-card-two.is-active { transform: translateX(-142%) translateZ(70px) rotateY(15deg) scale(0.9); }
+      .scene-card-three.is-active { transform: translateX(42%) translateZ(70px) rotateY(-15deg) scale(0.9); }
+
+      .scene-number {
+        position: relative;
+        z-index: 1;
+        color: #f0d487;
+        font: 700 0.72rem Georgia, serif;
+        letter-spacing: 0.12em;
+      }
+
+      .scene-card-image {
+        position: relative;
+        z-index: 1;
+        display: block;
+        height: 135px;
+        overflow: hidden;
+        border: 1px solid rgba(240,212,135,0.28);
+        background-color: #272016;
+      }
+
+      .scene-image-one {
+        background: linear-gradient(135deg, rgba(240,212,135,0.75), rgba(91,129,125,0.7) 55%, #17130d);
+      }
+
+      .scene-image-two {
+        background: radial-gradient(circle at 35% 30%, #f0d487 0 3%, transparent 4%), linear-gradient(145deg, #273d3b, #141414 64%, #9b7532);
+      }
+
+      .scene-image-three {
+        background: linear-gradient(155deg, #3d2526 0 35%, #d59d89 36% 48%, #171313 49% 100%);
+      }
+
+      .scene-card strong,
+      .scene-card small {
+        position: relative;
+        z-index: 1;
+      }
+
+      .scene-card strong {
+        color: #f5efe1;
+        font-size: 0.88rem;
+      }
+
+      .scene-card small {
+        color: #b8a46f;
+        font-size: 0.62rem;
+        letter-spacing: 0.12em;
+      }
+
+      .scene-status {
+        position: absolute;
+        right: 28px;
+        bottom: 24px;
+        z-index: 5;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #c4b995;
+        font-size: 0.72rem;
+        letter-spacing: 0.1em;
+      }
+
+      .scene-status-dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: #f0d487;
+        box-shadow: 0 0 12px #f0d487;
+        animation: statusPulse 1.8s ease-in-out infinite;
+      }
+
+      @keyframes statusPulse {
+        0%, 100% { transform: scale(0.8); opacity: 0.6; }
+        50% { transform: scale(1.25); opacity: 1; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          scroll-behavior: auto !important;
+          transition-duration: 0.01ms !important;
         }
       }
 
-      @media (max-width: 620px) {
-        .page {
-          width: min(100% - 12px, 1180px);
-          margin: 12px auto;
-          padding: 14px;
-        }
+      body[data-lang="en"] .lang-zh { display: none; }
+      body[data-lang="en"] .lang-en { display: block; }
+      body[data-lang="zh"] .lang-en { display: none; }
+      body[data-lang="zh"] .lang-zh { display: block; }
 
-        .profile-card {
-          flex-direction: column;
-          align-items: flex-start;
-        }
-
-        .project-grid, .mini-grid {
+      @media (max-width: 980px) {
+        .hero,
+        .about-grid,
+        .contact-box,
+        .timeline-grid {
           grid-template-columns: 1fr;
         }
 
-        .avatar {
-          width: 92px;
-          height: 92px;
-          min-width: 92px;
-          font-size: 28px;
+        .projects {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .project-feature {
+          grid-template-columns: 1fr;
+        }
+
+        .project-feature-note {
+          padding: 18px 0 0;
+          border-left: 0;
+          border-top: 1px solid rgba(47,98,95,0.18);
+        }
+      }
+
+      @media (max-width: 720px) {
+        .page { padding: 14px 14px 22px; }
+        .topbar,
+        .nav-wrap,
+        .main-nav {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .projects,
+        .stat-row,
+        .mini-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .gallery-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .project-scene {
+          min-height: 490px;
+          padding: 20px 16px 18px;
+        }
+
+        .scene-stage {
+          height: 350px;
+          margin-top: 0;
+          transform: scale(0.82);
+          transform-origin: center top;
+        }
+
+        .scene-status {
+          right: 16px;
+          bottom: 18px;
+        }
+
+        .hero-copy,
+        .visual-wrap,
+        .section-card {
+          padding-left: 16px;
+          padding-right: 16px;
         }
       }
     </style>
   </head>
-  <body>
+  <body data-lang="zh">
     <div class="page">
-      <div class="topbar">
+      <header class="topbar">
         <div class="brand">
-          <div class="brand-mark">G</div>
-          <span>个人简历</span>
-        </div>
-        <div class="tagline">Creative · Focused · Reliable</div>
-      </div>
-
-      <header class="header">
-        <div class="profile-card">
-          <div class="avatar">郭</div>
-          <div>
-            <h1>郭一博</h1>
-            <div class="title">前端开发 / 产品设计 / 视觉实现</div>
-            <p class="intro">
-              具备扎实的前端开发能力与产品思维，热爱将想法转化为清晰、优雅且高效的数字产品。
-              对用户体验、界面交互与前端工程化有持续关注，擅长在需求与实现之间建立桥梁，推动高质量交付。
-            </p>
-            <div class="meta-row">
-              <span class="pill">全栈视角</span>
-              <span class="pill">学习能力强</span>
-              <span class="pill">沟通协作</span>
-            </div>
+          <div class="brand-mark">Y</div>
+          <div class="brand-meta">
+            <span>郭一博 / Yibo Guo</span>
+            <small>DESIGN / UI / FRONT-END</small>
           </div>
         </div>
 
-        <aside class="side-card">
-          <ul class="contact-list">
-            <li><span class="contact-icon">📞</span> +86 138-0000-0000</li>
-            <li><span class="contact-icon">✉️</span> guoyibo@example.com</li>
-            <li><span class="contact-icon">📍</span> 广州 / 深圳</li>
-            <li><span class="contact-icon">💻</span> github.com/guoyibo</li>
-          </ul>
-        </aside>
+        <div class="nav-wrap">
+          <nav class="main-nav">
+            <a href="#about" class="lang-zh">关于我</a>
+            <a href="#works" class="lang-zh">作品</a>
+            <a href="#journey" class="lang-zh">经历</a>
+            <a href="#contact" class="lang-zh">联系</a>
+
+            <a href="#about" class="lang-en">About</a>
+            <a href="#works" class="lang-en">Works</a>
+            <a href="#journey" class="lang-en">Journey</a>
+            <a href="#contact" class="lang-en">Contact</a>
+          </nav>
+
+          <div class="lang-switch" aria-label="Language switcher">
+            <button type="button" class="active" data-lang="zh">中文</button>
+            <button type="button" data-lang="en">EN</button>
+          </div>
+        </div>
       </header>
 
-      <main class="content">
-        <div class="left">
-          <section class="section-card">
-            <div class="section-head">
-              <h2 class="section-title">教育经历</h2>
-              <span class="section-badge">2021 - 2025</span>
+      <main>
+        <section class="hero">
+          <div class="hero-copy">
+            <div class="eyebrow lang-zh">个人作品集</div>
+            <div class="eyebrow lang-en">PORTFOLIO</div>
+
+            <h1 class="lang-zh">郭一博<br />把想法做成可用的体验。</h1>
+            <h1 class="lang-en">Yibo Guo<br />Turning ideas into usable experiences.</h1>
+
+            <p class="subtitle lang-zh">
+              我是一名专注于品牌设计、UI 设计与 APP 前端实现的设计师，擅长将视觉表达、3D 建模与交互逻辑连接起来，完成从方案到落地的完整项目。
+            </p>
+            <p class="subtitle lang-en">
+              I’m Yibo Guo, a designer focused on brand design, UI design, and APP front-end development. I connect visual language, 3D modeling, and interaction to carry projects from concept to delivery.
+            </p>
+
+            <div class="cta-bar">
+              <a class="btn btn-primary lang-zh" href="#works">查看作品</a>
+              <a class="btn btn-primary lang-en" href="#works">View Works</a>
+              <a class="btn btn-secondary lang-zh" href="#contact">联系我</a>
+              <a class="btn btn-secondary lang-en" href="#contact">Contact Me</a>
             </div>
-            <div class="timeline">
-              <div class="timeline-item">
-                <div class="timeline-top">
-                  <h3 class="role">计算机科学与技术</h3>
-                  <span class="time">2021.09 - 2025.06</span>
-                </div>
-                <p class="company">某某大学 · 本科</p>
-                <p class="desc">
-                  主修前端开发、数据结构、计算机网络、软件工程等课程。曾获校级优秀学生奖、学习进步奖。
-                  参与多个校园项目与创新实践，积累了从需求分析到实现交付的完整经验。
-                </p>
+
+            <div class="stat-row">
+              <div class="stat-box">
+                <strong>3</strong>
+                <span class="lang-zh">独立完成项目</span>
+                <span class="lang-en">Project experiences</span>
+              </div>
+              <div class="stat-box">
+                <strong>40%</strong>
+                <span class="lang-zh">方案呈现效率提升</span>
+                <span class="lang-en">Performance gain</span>
+              </div>
+              <div class="stat-box">
+                <strong>100+</strong>
+                <span class="lang-zh">产品进入销售平台</span>
+                <span class="lang-en">Awards & certs</span>
               </div>
             </div>
-          </section>
+          </div>
 
-          <section class="section-card">
-            <div class="section-head">
-              <h2 class="section-title">工作经历</h2>
-              <span class="section-badge">2 年</span>
-            </div>
-            <div class="timeline">
-              <div class="timeline-item">
-                <div class="timeline-top">
-                  <h3 class="role">前端开发工程师</h3>
-                  <span class="time">2023.06 - 至今</span>
-                </div>
-                <p class="company">XX科技有限公司</p>
-                <p class="desc">
-                  负责官网与后台管理系统的前端开发，参与组件库建设、页面优化及性能提升。使用 Vue 3 + TypeScript
-                  完成业务模块开发，推动页面加载速度提升 30%，提升用户体验和维护效率。
-                </p>
+          <div class="visual-wrap" aria-label="Portfolio preview illustration">
+            <div class="glow"></div>
+            <div class="device-card">
+              <div class="device-top">
+                <div class="dots"><span></span><span></span><span></span></div>
+                <div class="mini-tag">UI / UX / Web</div>
               </div>
 
-              <div class="timeline-item">
-                <div class="timeline-top">
-                  <h3 class="role">前端实习生</h3>
-                  <span class="time">2022.06 - 2023.05</span>
+              <div class="dashboard">
+                <div class="dashboard-head">
+                  <h3 class="lang-zh">设计与开发能力</h3>
+                  <h3 class="lang-en">Overview</h3>
+                  <span class="status-badge">Live</span>
                 </div>
-                <p class="company">XX数字创新工作室</p>
-                <p class="desc">
-                  参与内容型网站与营销活动页的开发，负责页面交互、响应式适配和视觉还原。协同设计师与后端同事完成项目迭代，
-                  熟悉常见业务组件和小程序/网页端协同开发流程。
-                </p>
+
+                <div class="chart-card">
+                  <svg viewBox="0 0 420 140" preserveAspectRatio="none" aria-hidden="true">
+                    <defs>
+                      <linearGradient id="lineFill" x1="0" x2="1">
+                        <stop offset="0%" stop-color="#4263eb" stop-opacity="0.85" />
+                        <stop offset="100%" stop-color="#7aa9ff" stop-opacity="0.85" />
+                      </linearGradient>
+                    </defs>
+                    <path d="M0 110 C50 90, 90 80, 150 88 S245 64, 300 72 S360 40, 420 42 L420 140 L0 140 Z" fill="rgba(90,130,255,0.12)"/>
+                    <path d="M0 110 C50 90, 90 80, 150 88 S245 64, 300 72 S360 40, 420 42" fill="none" stroke="url(#lineFill)" stroke-width="4" stroke-linecap="round"/>
+                  </svg>
+                </div>
+
+                <div class="mini-grid">
+                  <div class="mini-panel">
+                    <span class="num">UI</span>
+                    <span class="txt lang-zh">界面设计</span>
+                    <span class="txt lang-en">Views</span>
+                  </div>
+                  <div class="mini-panel">
+                    <span class="num">3D</span>
+                    <span class="txt lang-zh">Blender 建模</span>
+                    <span class="txt lang-en">Satisfaction</span>
+                  </div>
+                  <div class="mini-panel">
+                    <span class="num">APP</span>
+                    <span class="txt lang-zh">前端研发</span>
+                    <span class="txt lang-en">Load time</span>
+                  </div>
+                </div>
               </div>
             </div>
-          </section>
 
-          <section class="section-card">
-            <div class="section-head">
-              <h2 class="section-title">项目经验</h2>
-              <span class="section-badge">3 项</span>
+            <div class="floating-card">
+              <span class="label lang-zh">方案呈现效率</span>
+              <span class="label lang-en">Completion</span>
+              <strong>+40%</strong>
             </div>
-            <div class="project-grid">
-              <article class="project-card">
-                <h4>智慧校园管理平台</h4>
-                <p>
-                  面向学校信息化管理需求，整合学生信息、课程安排、通知公告和数据统计模块，帮助老师提升教学管理效率。
-                </p>
-                <div class="project-tags">
-                  <span>Vue</span>
-                  <span>Element Plus</span>
-                  <span>Axios</span>
-                </div>
-              </article>
+          </div>
+        </section>
 
-              <article class="project-card">
-                <h4>企业官网重构</h4>
-                <p>
-                  以品牌展示与营销转化为核心，重新设计企业官网结构与交互，提升移动端体验和内容传播效率。
-                </p>
-                <div class="project-tags">
-                  <span>HTML</span>
-                  <span>CSS</span>
-                  <span>JavaScript</span>
-                </div>
-              </article>
+        <section class="section" id="about">
+          <div class="section-card">
+            <div class="section-head">
+              <h2 class="lang-zh">关于我</h2>
+              <h2 class="lang-en">About Me</h2>
+              <span class="section-tag">Profile</span>
+            </div>
 
-              <article class="project-card">
-                <h4>任务协作管理系统</h4>
-                <p>
-                  支持任务分配、进度跟踪、团队沟通与报表展示，优化团队运营流程和协作效率。
-                </p>
-                <div class="project-tags">
-                  <span>React</span>
-                  <span>Ant Design</span>
-                  <span>Node.js</span>
+            <div class="about-grid">
+              <div class="about-copy">
+                <div class="lang-zh">
+                  我在北京 ACG 国际艺术担任品牌设计推广与 APP 前端研发，指导并独立完成三个项目，负责项目方案视觉设计，让方案呈现效率提升 30%。我也曾在石家庄 APP 设计公司“邻小管”担任 IP 设计师，完成百余家产品进入销售平台，并参与社区推广。
                 </div>
-              </article>
+                <div class="lang-en">
+                  At Beijing ACG International Art, I worked across brand promotion and APP front-end development, independently completing three projects and improving presentation efficiency by 30%. I also worked as an IP designer at Linxiaoguan, helping more than 100 products enter sales platforms.
+                </div>
 
-              <article class="project-card">
-                <h4>个人简历站点</h4>
-                <p>
-                  以视觉设计与内容组织为核心，打造适合展示个人能力与项目经历的前端作品，体现专业与审美感。
-                </p>
-                <div class="project-tags">
+                <div class="skill-tags">
+                  <span>Blender</span>
                   <span>Figma</span>
-                  <span>前端开发</span>
-                  <span>布局设计</span>
+                  <span>AI</span>
+                  <span>Unity</span>
+                  <span>Photoshop</span>
+                  <span>UI / APP</span>
+                </div>
+              </div>
+
+              <div class="process-list">
+                <div class="process-item">
+                  <div class="step">1</div>
+                  <div>
+                    <strong class="lang-zh">品牌与视觉</strong>
+                    <strong class="lang-en">Research</strong>
+                  </div>
+                </div>
+                <div class="process-item">
+                  <div class="step">2</div>
+                  <div>
+                    <strong class="lang-zh">APP 交互设计</strong>
+                    <strong class="lang-en">Structure</strong>
+                  </div>
+                </div>
+                <div class="process-item">
+                  <div class="step">3</div>
+                  <div>
+                    <strong class="lang-zh">3D 场景建模</strong>
+                    <strong class="lang-en">Visual Design</strong>
+                  </div>
+                </div>
+                <div class="process-item">
+                  <div class="step">4</div>
+                  <div>
+                    <strong class="lang-zh">前端实现</strong>
+                    <strong class="lang-en">Front-end Build</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="works">
+          <div class="section-card">
+            <div class="section-head">
+              <h2 class="lang-zh">作品展示</h2>
+              <h2 class="lang-en">Featured Works</h2>
+              <span class="section-tag">Projects</span>
+            </div>
+
+            <div class="project-scene" data-project-scene tabindex="0" aria-label="三维项目展览场景，可点击切换项目">
+              <div class="scene-copy">
+                <span class="project-kicker">INTERACTIVE PROJECT ARCHIVE</span>
+                <h3>在空间里浏览三个项目</h3>
+                <p>移动鼠标改变视角，点击展板聚焦项目。</p>
+              </div>
+              <div class="scene-stage">
+                <div class="scene-floor"></div>
+                <button class="scene-card scene-card-one is-active" type="button" data-project="one" aria-label="聚焦职业技能协同 APP">
+                  <span class="scene-number">01</span>
+                  <span class="scene-card-image scene-image-one"></span>
+                  <strong>职业技能协同 APP</strong>
+                  <small>3D / APP / UI</small>
+                </button>
+                <button class="scene-card scene-card-two" type="button" data-project="two" aria-label="聚焦信息博物馆 VR 体验">
+                  <span class="scene-number">02</span>
+                  <span class="scene-card-image scene-image-two"></span>
+                  <strong>信息博物馆</strong>
+                  <small>VR / SPACE / STORY</small>
+                </button>
+                <button class="scene-card scene-card-three" type="button" data-project="three" aria-label="聚焦生活记录与反语言暴力">
+                  <span class="scene-number">03</span>
+                  <span class="scene-card-image scene-image-three"></span>
+                  <strong>生活记录</strong>
+                  <small>VISUAL / SOCIAL</small>
+                </button>
+              </div>
+              <div class="scene-status"><span class="scene-status-dot"></span><span data-scene-status>01 / 职业技能协同 APP</span></div>
+            </div>
+
+            <div class="projects">
+              <article class="project-card">
+                <div class="project-visual">
+                  <iframe class="pdf-page" src="3个项目完整（新压缩版）.pdf#page=1&view=FitH" title="职业技能协同 APP 项目 PDF 页面"></iframe>
+                </div>
+                <div class="project-body">
+                  <h3 class="lang-zh">职业技能协同 APP</h3>
+                  <h3 class="lang-en">Career Skills Companion APP</h3>
+                  <p class="lang-zh">利用 Blender 等 3D 建模，构建与 APP 协同的工作项目体验，帮助用户了解进入指定工作项目所需的技能。</p>
+                  <p class="lang-en">A 3D-supported APP concept that helps people understand the skills required to enter a specific career project.</p>
+                  <div class="taglist">
+                    <span>Blender</span><span>APP</span><span>UI</span>
+                  </div>
+                  <a class="btn btn-secondary project-link" href="3个项目完整（新压缩版）.pdf" target="_blank" rel="noreferrer">查看项目 PDF</a>
+                </div>
+              </article>
+
+              <article class="project-card">
+                <div class="project-visual" style="background: linear-gradient(135deg, rgba(255,180,84,0.18), rgba(255,236,180,0.12));">
+                  <iframe class="pdf-page" src="3个项目完整（新压缩版）.pdf#page=2&view=FitH" title="信息博物馆 VR 项目 PDF 页面"></iframe>
+                </div>
+                <div class="project-body">
+                  <h3 class="lang-zh">信息博物馆 / VR 体验</h3>
+                  <h3 class="lang-en">Information Museum / VR Experience</h3>
+                  <p class="lang-zh">建立信息博物馆，用 VR 场景实体体验信息新闻，让信息被完整地理解，而不再碎片化。</p>
+                  <p class="lang-en">An information museum concept using VR scenes to turn fragmented news into a complete, spatial experience.</p>
+                  <div class="taglist">
+                    <span>VR</span><span>Experience</span><span>3D</span>
+                  </div>
+                  <a class="btn btn-secondary project-link" href="3个项目完整（新压缩版）.pdf" target="_blank" rel="noreferrer">查看项目 PDF</a>
+                </div>
+              </article>
+
+              <article class="project-card">
+                <div class="project-visual" style="background: linear-gradient(135deg, rgba(70,211,154,0.15), rgba(196,255,229,0.12));">
+                  <iframe class="pdf-page" src="3个项目完整（新压缩版）.pdf#page=3&view=FitH" title="生活记录与反语言暴力项目 PDF 页面"></iframe>
+                </div>
+                <div class="project-body">
+                  <h3 class="lang-zh">生活记录与反语言暴力</h3>
+                  <h3 class="lang-en">A Visual Response to Online Abuse</h3>
+                  <p class="lang-zh">用绘画等方式记录生活，减少语言暴力，降低网络暴力带来的社会负面影响。</p>
+                  <p class="lang-en">A visual storytelling project using drawing and everyday records to respond to verbal and online abuse.</p>
+                  <div class="taglist">
+                    <span>Visual</span><span>Social</span><span>Storytelling</span>
+                  </div>
+                  <a class="btn btn-secondary project-link" href="3个项目完整（新压缩版）.pdf" target="_blank" rel="noreferrer">查看项目 PDF</a>
                 </div>
               </article>
             </div>
-          </section>
-        </div>
 
-        <aside class="right">
-          <section class="section-card">
-            <div class="section-head">
-              <h2 class="section-title">专业技能</h2>
-              <span class="section-badge">能力</span>
-            </div>
-            <div class="skill-list">
-              <div class="skill-item">
-                <div class="skill-head"><span>HTML / CSS / JavaScript</span><span>90%</span></div>
-                <div class="bar"><div class="fill fill-90"></div></div>
+            <div class="project-feature project-case project-case-one">
+              <div class="project-feature-copy">
+                <span class="project-kicker">CASE STUDY / 01</span>
+                <h3>Learn to Work · 从研究到体验</h3>
+                <p>这是一个围绕职业技能学习与工作准备展开的交互设计项目。项目从 inspiration、research 和 user interview 出发，梳理用户痛点，进一步发展出设计概念、工具包、信息架构、用户界面与完整蓝图。</p>
+                <div class="feature-points">
+                  <span>用户研究</span>
+                  <span>信息架构</span>
+                  <span>APP 原型</span>
+                  <span>服务蓝图</span>
+                </div>
+                <a class="btn btn-primary" href="3个项目完整（新压缩版）.pdf" target="_blank" rel="noreferrer">打开完整 19 页项目集</a>
               </div>
-              <div class="skill-item">
-                <div class="skill-head"><span>Vue / React</span><span>85%</span></div>
-                <div class="bar"><div class="fill fill-85"></div></div>
-              </div>
-              <div class="skill-item">
-                <div class="skill-head"><span>UI 设计 / 交互实现</span><span>80%</span></div>
-                <div class="bar"><div class="fill fill-80"></div></div>
-              </div>
-              <div class="skill-item">
-                <div class="skill-head"><span>沟通协调 / 文档输出</span><span>75%</span></div>
-                <div class="bar"><div class="fill fill-75"></div></div>
+              <div class="project-feature-note">
+                <strong>我的职责</strong>
+                <p>3D 建模、视觉方案、交互设计、界面排版与项目呈现。</p>
+                <strong>项目价值</strong>
+                <p>把碎片化的信息和技能路径整理成可理解、可探索、可执行的学习体验。</p>
               </div>
             </div>
-          </section>
 
-          <section class="section-card">
-            <div class="section-head">
-              <h2 class="section-title">技能标签</h2>
-              <span class="section-badge">常用</span>
+            <div class="project-feature project-case project-case-two">
+              <div class="project-feature-copy">
+                <span class="project-kicker">CASE STUDY / 02</span>
+                <h3>信息博物馆 · 让新闻回到完整语境</h3>
+                <p>项目针对信息碎片化的问题，构想一个以 VR 场景为核心的信息博物馆。用户可以通过空间、时间和事件线索重新组织新闻，在实体体验中建立更完整的理解。</p>
+                <div class="feature-points">
+                  <span>信息可视化</span>
+                  <span>VR 场景</span>
+                  <span>空间叙事</span>
+                  <span>交互体验</span>
+                </div>
+                <a class="btn btn-primary" href="3个项目完整（新压缩版）.pdf#page=7" target="_blank" rel="noreferrer">查看项目资料</a>
+              </div>
+              <div class="project-feature-note">
+                <strong>设计重点</strong>
+                <p>把抽象的信息关系转化为空间中的路径、节点与可探索的内容。</p>
+                <strong>我的产出</strong>
+                <p>VR 场景概念、视觉系统、信息结构与体验流程。</p>
+              </div>
             </div>
-            <div class="tag-cloud">
-              <span class="tag">Vue 3</span>
-              <span class="tag">TypeScript</span>
-              <span class="tag">Node.js</span>
-              <span class="tag">Responsive</span>
-              <span class="tag">Git</span>
-              <span class="tag">Figma</span>
-              <span class="tag">Web UI</span>
-              <span class="tag">SEO</span>
-            </div>
-          </section>
 
-          <section class="section-card">
+            <div class="project-feature project-case project-case-three">
+              <div class="project-feature-copy">
+                <span class="project-kicker">CASE STUDY / 03</span>
+                <h3>生活记录 · 用视觉回应语言暴力</h3>
+                <p>项目通过绘画和日常记录回应网络语言暴力，把难以直接表达的情绪转化为可观看、可分享的视觉内容，尝试降低负面表达对个人和社会关系的影响。</p>
+                <div class="feature-points">
+                  <span>视觉叙事</span>
+                  <span>插画表达</span>
+                  <span>社会议题</span>
+                  <span>内容设计</span>
+                </div>
+                <a class="btn btn-primary" href="3个项目完整（新压缩版）.pdf#page=13" target="_blank" rel="noreferrer">查看项目资料</a>
+              </div>
+              <div class="project-feature-note">
+                <strong>设计重点</strong>
+                <p>用克制、具有亲和力的图像建立情绪缓冲，让表达更容易被理解。</p>
+                <strong>我的产出</strong>
+                <p>主题设定、绘画记录、版式编排与项目展示视觉。</p>
+              </div>
+            </div>
+
+            <div class="project-gallery" aria-label="项目 PDF 页面预览">
+              <div class="gallery-heading">
+                <span>SELECTED PAGES</span>
+                <small>项目过程精选</small>
+              </div>
+              <div class="gallery-grid">
+                <iframe class="gallery-page gallery-page-tall" src="3个项目完整（新压缩版）.pdf#page=1&view=FitH" title="项目封面与研究总览"></iframe>
+                <iframe class="gallery-page" src="3个项目完整（新压缩版）.pdf#page=2&view=FitH" title="项目用户研究页面"></iframe>
+                <iframe class="gallery-page" src="3个项目完整（新压缩版）.pdf#page=3&view=FitH" title="项目研究分析页面"></iframe>
+                <iframe class="gallery-page gallery-page-tall" src="3个项目完整（新压缩版）.pdf#page=4&view=FitH" title="项目设计概念页面"></iframe>
+                <iframe class="gallery-page" src="3个项目完整（新压缩版）.pdf#page=5&view=FitH" title="项目工具包与界面页面"></iframe>
+                <iframe class="gallery-page" src="3个项目完整（新压缩版）.pdf#page=6&view=FitH" title="项目生态地图与蓝图页面"></iframe>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="journey">
+          <div class="section-card">
             <div class="section-head">
-              <h2 class="section-title">个人亮点</h2>
-              <span class="section-badge">优点</span>
+              <h2 class="lang-zh">学习与经历</h2>
+              <h2 class="lang-en">Education & Experience</h2>
+              <span class="section-tag">Journey</span>
             </div>
-            <div class="mini-grid">
-              <div class="stat-box">
-                <span class="stat-num">3+</span>
-                <span class="stat-label">大型项目经验</span>
+
+            <div class="timeline-grid">
+              <div class="time-card">
+                <div class="item">
+                  <h3 class="lang-zh">河北师范大学</h3>
+                  <h3 class="lang-en">Hebei Normal University</h3>
+                  <div class="meta">2020.09 — 2024.06 · 艺术学部</div>
+                  <p class="lang-zh">设计视觉传达、交互设计方向。在校期间成绩优异，多次获得省内艺术作品展出。</p>
+                  <p class="lang-en">Studied visual communication and interaction design, with strong academic performance and multiple provincial art exhibitions.</p>
+                </div>
+                <div class="item">
+                  <h3 class="lang-zh">北京 ACG 国际艺术</h3>
+                  <h3 class="lang-en">Beijing ACG International Art</h3>
+                  <div class="meta">品牌设计推广 · APP 前端研发</div>
+                  <p class="lang-zh">指导并独立完成三个项目，负责方案视觉设计，提升方案呈现效率 30%。</p>
+                  <p class="lang-en">Led and independently completed three projects, owning visual design and improving presentation efficiency by 30%.</p>
+                </div>
               </div>
-              <div class="stat-box">
-                <span class="stat-num">30%</span>
-                <span class="stat-label">页面性能提升</span>
-              </div>
-              <div class="stat-box">
-                <span class="stat-num">8</span>
-                <span class="stat-label">获奖 / 证书</span>
-              </div>
-              <div class="stat-box">
-                <span class="stat-num">2</span>
-                <span class="stat-label">团队协作方向</span>
+
+              <div class="time-card">
+                <div class="item">
+                  <h3 class="lang-zh">邻小管 · IP 设计师</h3>
+                  <h3 class="lang-en">Linxiaoguan · IP Designer</h3>
+                  <div class="meta">石家庄 APP 设计公司</div>
+                  <p class="lang-zh">完成百余家产品进入销售平台，并将邻小管推广至各个小区，为社区提供福利最后一公里。</p>
+                  <p class="lang-en">Helped more than 100 products enter sales platforms and promoted Linxiaoguan across residential communities.</p>
+                </div>
+                <div class="item">
+                  <h3 class="lang-zh">现阶段学习</h3>
+                  <h3 class="lang-en">Current Study</h3>
+                  <div class="meta">香港岭南大学 · Arts Tech and Business</div>
+                  <p class="lang-zh">喜欢与人相互学习，适应新事物，具备跨部门沟通、计划与执行能力，可接受出差和现场跟进。</p>
+                  <p class="lang-en">Currently studying Arts Tech and Business at Lingnan University, with strong communication, planning, and execution skills.</p>
+                </div>
               </div>
             </div>
-          </section>
-        </aside>
+          </div>
+        </section>
+
+        <section class="section" id="contact">
+          <div class="section-card contact-box">
+            <div class="contact-copy">
+              <div class="section-head" style="margin-bottom: 10px;">
+                <h2 class="lang-zh">联系我</h2>
+                <h2 class="lang-en">Get in Touch</h2>
+                <span class="section-tag">Contact</span>
+              </div>
+              <div class="lang-zh">
+                如果你正在寻找兼具视觉表达、UI 设计与 APP 前端实现能力的人，我很乐意交流项目想法、协作方式与创意方向。
+                普通话资格证、教师资格证、驾驶本 C1；可接受出差、外勤、设备现场勘查与客户现场演示。
+              </div>
+              <div class="lang-en">
+                If you are looking for someone who can balance visual expression, UI design, and APP front-end implementation,
+                I’d love to connect and talk about ideas, collaboration, and product direction.
+              </div>
+            </div>
+
+            <div class="contact-card">
+              <ul>
+                <li><span class="contact-icon">✦</span> 郭一博 / Yibo Guo</li>
+                <li><span class="contact-icon">☎</span> 19933144141</li>
+                <li><span class="contact-icon">◎</span> 品牌设计 · APP 前端 · UI 设计</li>
+              </ul>
+            </div>
+          </div>
+        </section>
       </main>
     </div>
+
+    <script>
+      const buttons = document.querySelectorAll('.lang-switch button');
+      const body = document.body;
+
+      buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+          const lang = button.dataset.lang;
+          body.setAttribute('data-lang', lang);
+          buttons.forEach((btn) => btn.classList.toggle('active', btn === button));
+        });
+      });
+
+      const scene = document.querySelector('[data-project-scene]');
+      const sceneStage = scene?.querySelector('.scene-stage');
+      const sceneCards = [...document.querySelectorAll('.scene-card')];
+      const sceneStatus = document.querySelector('[data-scene-status]');
+      let sceneTimer;
+      let scenePaused = false;
+      const sceneNames = {
+        one: '01 / 职业技能协同 APP',
+        two: '02 / 信息博物馆 VR 体验',
+        three: '03 / 生活记录与反语言暴力'
+      };
+
+      function focusSceneProject(project) {
+        sceneCards.forEach((card) => card.classList.toggle('is-active', card.dataset.project === project));
+        if (sceneStatus) sceneStatus.textContent = sceneNames[project];
+      }
+
+      function startSceneRotation() {
+        clearInterval(sceneTimer);
+        sceneTimer = setInterval(() => {
+          if (scenePaused || !sceneCards.length) return;
+          const currentIndex = sceneCards.findIndex((card) => card.classList.contains('is-active'));
+          const nextIndex = (currentIndex + 1) % sceneCards.length;
+          focusSceneProject(sceneCards[nextIndex].dataset.project);
+        }, 4200);
+      }
+
+      sceneCards.forEach((card) => {
+        card.addEventListener('click', () => {
+          scenePaused = true;
+          focusSceneProject(card.dataset.project);
+        });
+      });
+
+      scene?.addEventListener('pointerenter', () => { scenePaused = true; });
+      scene?.addEventListener('pointerleave', () => { scenePaused = false; });
+      scene?.addEventListener('focusin', () => { scenePaused = true; });
+      scene?.addEventListener('focusout', () => { scenePaused = false; });
+
+      scene?.addEventListener('pointermove', (event) => {
+        if (!sceneStage || window.matchMedia('(max-width: 720px)').matches) return;
+        const bounds = scene.getBoundingClientRect();
+        const rotateX = ((event.clientY - bounds.top) / bounds.height - 0.5) * -7;
+        const rotateY = ((event.clientX - bounds.left) / bounds.width - 0.5) * 9;
+        sceneStage.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+      });
+
+      scene?.addEventListener('pointerleave', () => {
+        if (sceneStage) sceneStage.style.transform = '';
+      });
+
+      scene?.addEventListener('keydown', (event) => {
+        if (!['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
+        event.preventDefault();
+        const currentIndex = sceneCards.findIndex((card) => card.classList.contains('is-active'));
+        const nextIndex = event.key === 'ArrowRight'
+          ? (currentIndex + 1) % sceneCards.length
+          : (currentIndex - 1 + sceneCards.length) % sceneCards.length;
+        focusSceneProject(sceneCards[nextIndex].dataset.project);
+        sceneCards[nextIndex].focus();
+      });
+
+      startSceneRotation();
+    </script>
   </body>
 </html>
