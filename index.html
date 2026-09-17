@@ -288,9 +288,9 @@
         border-radius: 50%;
         display: block;
       }
-      .dots span:nth-child(1) { background: #ff6178; }
-      .dots span:nth-child(2) { background: #ffc857; }
-      .dots span:nth-child(3) { background: #46d39a; }
+      .dots span:nth-child(1) { background: #63544b; }
+      .dots span:nth-child(2) { background: #cfcac3; }
+      .dots span:nth-child(3) { background: #fe3d06; }
 
       .mini-tag {
         padding: 8px 10px;
@@ -499,7 +499,7 @@
 
       #works .section-tag {
         background: rgba(232,199,115,0.16);
-        color: #e8c773;
+        color: #fe3d06;
       }
 
       .project-card {
@@ -513,7 +513,7 @@
       .project-visual {
         height: 180px;
         padding: 18px;
-        background: #e8c773;
+        background: #2b190f;
         border-bottom: 1px solid rgba(29,41,39,0.12);
         position: relative;
       }
@@ -555,9 +555,9 @@
         display: inline-block;
       }
 
-      .mock-window .dot:nth-child(1) { background: #ff6178; }
-      .mock-window .dot:nth-child(2) { background: #ffc857; }
-      .mock-window .dot:nth-child(3) { background: #46d39a; }
+      .mock-window .dot:nth-child(1) { background: #63544b; }
+      .mock-window .dot:nth-child(2) { background: #cfcac3; }
+      .mock-window .dot:nth-child(3) { background: #fe3d06; }
 
       .mock-content {
         height: calc(100% - 32px);
@@ -1452,6 +1452,183 @@
           padding-right: 16px;
         }
       }
+      /* Dark studio palette */
+      :root {
+        --bg-1: #2c180f;
+        --bg-2: #2b190f;
+        --bg-3: #29180e;
+        --card: #242424;
+        --card-strong: #0a0a0a;
+        --primary: #fe3d06;
+        --primary-dark: #f5f3ee;
+        --secondary: #c7c6ff;
+        --accent: #ff4f00;
+        --text: #f5f3ee;
+        --muted: #cfcac3;
+        --line: rgba(245, 243, 238, 0.2);
+        --shadow: 0 24px 65px rgba(10, 10, 10, 0.35);
+        --nav-fg: #d7e6ef;
+        --nav-fg-dim: rgba(215, 230, 239, 0.4);
+      }
+
+      ::selection { color: #36373a; background: #fef165; }
+      body {
+        color: #f5f3ee;
+        background: #2b190f;
+        background-image: linear-gradient(135deg, #2c180f, #29180e 62%, #0a0a0a);
+      }
+      a { color: inherit; }
+      .page {
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 clamp(20px, 5vw, 84px) 72px;
+        background: transparent;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+        backdrop-filter: none;
+      }
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        margin: 0 calc(clamp(20px, 5vw, 84px) * -1);
+        padding: 22px clamp(20px, 5vw, 84px);
+        background: rgba(43, 25, 15, 0.96);
+        border-bottom: 1px solid #2b190f;
+      }
+      .brand, .brand-meta span { color: var(--nav-fg); }
+      .brand-mark { border-radius: 0; background: #f5f3ee; color: #2b190f; box-shadow: none; }
+      .brand-meta small, .main-nav a { color: var(--nav-fg); }
+      .main-nav a { border-radius: 0; transition: color 0.3s ease, opacity 0.3s ease; }
+      .main-nav a:hover { color: #fe3d06; background: transparent; }
+      .lang-switch { padding: 0; border: 0; border-radius: 0; background: transparent; }
+      .lang-switch button { border-radius: 0; color: var(--nav-fg-dim); transition: color 0.3s ease, background-color 0.3s ease; }
+      .lang-switch button.active { background: #f5f3ee; color: #2b190f; box-shadow: none; }
+
+      .hero {
+        min-height: 100dvh;
+        align-items: center;
+        padding: clamp(72px, 11vw, 150px) 0 clamp(58px, 9vw, 120px);
+      }
+      .hero-copy { background: transparent; border: 0; border-radius: 0; box-shadow: none; }
+      .hero .glow { opacity: 0.28; transform: scale(0.82); }
+      .hero .device-card { opacity: 0.82; }
+      .hero .floating-card { opacity: 0.78; }
+      .hero .cta-bar .btn-primary { color: #f5f3ee; border-color: var(--interaction); background: var(--blue-black); padding: 12px 18px; }
+      .hero .cta-bar .btn-secondary { opacity: 0.68; }
+      .project-detail-toggle { margin-top: 14px; background: transparent; }
+      .project-detail-toggle[aria-expanded="true"] { color: var(--interaction); border-color: var(--interaction); }
+      .main-nav a[aria-current="true"] { color: var(--interaction); }
+      .eyebrow, .section-tag, .project-kicker, .gallery-heading span { color: #fe3d06; }
+      h1 { color: #f5f3ee; font-weight: 500; letter-spacing: -0.07em; }
+      .subtitle, .section-card p, .about-copy { color: #cfcac3; }
+      .cta-bar { gap: 22px; }
+      .btn { border: 0; border-bottom: 1px solid #f5f3ee; border-radius: 0; color: #f5f3ee; transition: color 0.3s ease, border-color 0.3s ease, opacity 0.3s ease; }
+      .btn:hover { transform: none; color: #fe3d06; border-color: #fe3d06; }
+      .btn-primary, .btn-secondary { background: transparent; color: #f5f3ee; box-shadow: none; }
+      .stat-row { border-top-color: rgba(245, 243, 238, 0.22); }
+      .stat-box { background: transparent; border: 0; border-radius: 0; box-shadow: none; }
+      .stat-box strong { color: #f5f3ee; }
+      .stat-box span { color: #cfcac3; }
+
+      .glow { background: rgba(199, 198, 255, 0.12); filter: none; }
+      .device-card { border-radius: 0; background: #242424; border-color: #4d3e35; box-shadow: var(--shadow); }
+      .device-top { border-bottom-color: #4d3e35; }
+      .dashboard { background: #f5f3ee; }
+      .dashboard-head h3, .mini-panel .num { color: #2c180f; }
+      .chart-card, .mini-panel { background: #e9e5dd; border-color: #cfcac3; }
+      .floating-card { border-radius: 999px; background: #c7c6ff; color: #2b190f; box-shadow: none; }
+
+      .section { margin-top: 0; }
+      .section-card { padding: clamp(54px, 8vw, 112px) 0; border: 0; border-top: 1px solid #2b190f; border-radius: 0; background: #2c180f; box-shadow: none; }
+      .section:nth-of-type(even) .section-card { background: #242424; }
+      .section-head h2 { color: #f5f3ee; font-weight: 500; letter-spacing: -0.06em; }
+      .skill-tags span, .taglist span { border: 0; border-bottom: 1px solid #4d3e35; border-radius: 0; background: transparent; color: #cfcac3; }
+      .process-item, .time-card { border: 0; border-top: 1px solid rgba(245, 243, 238, 0.18); border-radius: 0; background: transparent; box-shadow: none; }
+      .step { border-radius: 50%; background: #fe3d06; color: #f5f3ee; }
+      #works .section-card { background: #242424; color: #f5f3ee; }
+      .projects { gap: 1px; background: #4d3e35; }
+      .project-card { border: 0; border-radius: 0; background: #2c180f; box-shadow: none; }
+      .project-visual { background: #2b190f !important; }
+      .project-body h3, #works .project-body h3, .project-feature h3 { color: #f5f3ee; }
+      .project-body p, .project-feature p { color: #cfcac3; }
+      .project-feature, .project-case-two, .project-case-three { background: #2c180f; border-left: 2px solid #fe3d06; border-radius: 0; }
+      .project-case-two { border-left-color: #c7c6ff; }
+      .project-feature-note { border-left-color: #4d3e35; }
+      .project-feature-note strong { color: #fe3d06; }
+      .gallery-page { border-color: #4d3e35; box-shadow: none; }
+      .contact-card { border-radius: 0; background: #0a0a0a; color: #f5f3ee; box-shadow: none; }
+      .contact-card li { border-bottom-color: #2b190f; }
+      .contact-icon { color: #fe3d06; }
+      input:focus, textarea:focus, select:focus { border-color: #fe3d06; outline-color: #fe3d06; }
+
+      @media (max-width: 820px) {
+        .topbar { position: relative; }
+        .hero { min-height: auto; }
+      }
+
+      /* Interactive studio layer */
+      :root {
+        --nav-fg: #d7e6ef;
+        --nav-fg-dim: rgba(215, 230, 239, 0.4);
+        --interaction: #d7e6ef;
+        --blue-black: #0a1720;
+        --primary: #d7e6ef;
+        --primary-dark: #d7e6ef;
+        --secondary: #0a1720;
+        --accent: #d7e6ef;
+        --text: #f5f3ee;
+        --muted: #b8c4ca;
+        --line: rgba(215, 230, 239, 0.24);
+      }
+
+      body { cursor: default; }
+      body {
+        color: #f5f3ee;
+        background: #0a0a0a;
+        background-image: radial-gradient(circle at 78% 16%, rgba(215, 230, 239, 0.1), transparent 28%), linear-gradient(135deg, #0a0a0a, #0a1720 68%, #0a0a0a);
+      }
+      a, button, [role="button"] { cursor: pointer; }
+      body.is-dragging { cursor: grabbing; user-select: none; }
+      body[data-cursor="pointer"] { cursor: pointer; }
+      body[data-cursor="grabbing"] { cursor: grabbing; user-select: none; }
+      .webgl-stage {
+        position: fixed;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+        opacity: 0.72;
+        mix-blend-mode: screen;
+      }
+      .webgl-stage canvas { display: block; width: 100%; height: 100%; }
+      .page { position: relative; z-index: 1; }
+      .visual-wrap { transform: translate3d(var(--camera-x, 0px), var(--camera-y, 0px), 0) rotate(var(--camera-roll, 0deg)); }
+      .scene-transition {
+        position: fixed;
+        inset: 0;
+        z-index: 30;
+        pointer-events: none;
+        opacity: 0;
+        background: repeating-linear-gradient(90deg, rgba(215, 230, 239, 0.08) 0 12px, transparent 12px 28px), #0a1720;
+        clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+        transition: opacity 0.2s ease, clip-path 0.55s cubic-bezier(0.76, 0, 0.24, 1);
+      }
+      .scene-transition.is-active { opacity: 0.9; clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+      @media (max-width: 720px), (prefers-reduced-motion: reduce) {
+        .webgl-stage { display: none; }
+      }
+      .topbar { color: var(--nav-fg); }
+      .main-nav a, .brand-meta small { color: var(--nav-fg); }
+      .main-nav a:hover, .eyebrow, .section-tag, .project-kicker, .gallery-heading span,
+      .contact-icon { color: var(--interaction); }
+      .btn, .btn-primary, .btn-secondary { color: var(--nav-fg); border-color: var(--nav-fg); }
+      .btn:hover { color: var(--interaction); border-color: var(--interaction); background: var(--blue-black); }
+      .lang-switch button.active { background: var(--interaction); color: var(--blue-black); }
+      .floating-card { background: var(--blue-black); color: var(--interaction); border: 1px solid var(--interaction); }
+      .project-feature-note strong { color: var(--interaction); }
+      .scene-card:focus-visible, .scene-card:hover { outline-color: var(--interaction); }
+      input:focus, textarea:focus, select:focus { border-color: var(--interaction); outline-color: var(--interaction); }
     </style>
   </head>
   <body data-lang="zh">
@@ -1467,20 +1644,20 @@
 
         <div class="nav-wrap">
           <nav class="main-nav">
-            <a href="#about" class="lang-zh">关于我</a>
-            <a href="#works" class="lang-zh">作品</a>
-            <a href="#journey" class="lang-zh">经历</a>
-            <a href="#contact" class="lang-zh">联系</a>
+            <a href="#about" class="lang-zh" data-nav-section="about">关于我</a>
+            <a href="#works" class="lang-zh" data-nav-section="works">作品</a>
+            <a href="#journey" class="lang-zh" data-nav-section="journey">经历</a>
+            <a href="#contact" class="lang-zh" data-nav-section="contact">联系</a>
 
-            <a href="#about" class="lang-en">About</a>
-            <a href="#works" class="lang-en">Works</a>
-            <a href="#journey" class="lang-en">Journey</a>
-            <a href="#contact" class="lang-en">Contact</a>
+            <a href="#about" class="lang-en" data-nav-section="about">About</a>
+            <a href="#works" class="lang-en" data-nav-section="works">Works</a>
+            <a href="#journey" class="lang-en" data-nav-section="journey">Journey</a>
+            <a href="#contact" class="lang-en" data-nav-section="contact">Contact</a>
           </nav>
 
-          <div class="lang-switch" aria-label="Language switcher">
-            <button type="button" class="active" data-lang="zh">中文</button>
-            <button type="button" data-lang="en">EN</button>
+          <div class="lang-switch" aria-label="Language switcher" role="group">
+            <button type="button" class="active" data-lang="zh" aria-pressed="true">中文</button>
+            <button type="button" data-lang="en" aria-pressed="false">EN</button>
           </div>
         </div>
       </header>
@@ -1546,8 +1723,8 @@
                   <svg viewBox="0 0 420 140" preserveAspectRatio="none" aria-hidden="true">
                     <defs>
                       <linearGradient id="lineFill" x1="0" x2="1">
-                        <stop offset="0%" stop-color="#4263eb" stop-opacity="0.85" />
-                        <stop offset="100%" stop-color="#7aa9ff" stop-opacity="0.85" />
+                        <stop offset="0%" stop-color="#fe3d06" stop-opacity="0.85" />
+                        <stop offset="100%" stop-color="#ff4f00" stop-opacity="0.85" />
                       </linearGradient>
                     </defs>
                     <path d="M0 110 C50 90, 90 80, 150 88 S245 64, 300 72 S360 40, 420 42 L420 140 L0 140 Z" fill="rgba(90,130,255,0.12)"/>
@@ -1696,6 +1873,8 @@
                     <span>Blender</span><span>APP</span><span>UI</span>
                   </div>
                   <a class="btn btn-secondary project-link" href="3个项目完整（新压缩版）.pdf" target="_blank" rel="noreferrer">查看项目 PDF</a>
+                  <button class="btn project-detail-toggle lang-zh" type="button" data-detail="one" aria-expanded="false">展开项目详情</button>
+                  <button class="btn project-detail-toggle lang-en" type="button" data-detail="one" aria-expanded="false">Read case study</button>
                 </div>
               </article>
 
@@ -1712,6 +1891,8 @@
                     <span>VR</span><span>Experience</span><span>3D</span>
                   </div>
                   <a class="btn btn-secondary project-link" href="3个项目完整（新压缩版）.pdf" target="_blank" rel="noreferrer">查看项目 PDF</a>
+                  <button class="btn project-detail-toggle lang-zh" type="button" data-detail="two" aria-expanded="false">展开项目详情</button>
+                  <button class="btn project-detail-toggle lang-en" type="button" data-detail="two" aria-expanded="false">Read case study</button>
                 </div>
               </article>
 
@@ -1728,11 +1909,13 @@
                     <span>Visual</span><span>Social</span><span>Storytelling</span>
                   </div>
                   <a class="btn btn-secondary project-link" href="3个项目完整（新压缩版）.pdf" target="_blank" rel="noreferrer">查看项目 PDF</a>
+                  <button class="btn project-detail-toggle lang-zh" type="button" data-detail="three" aria-expanded="false">展开项目详情</button>
+                  <button class="btn project-detail-toggle lang-en" type="button" data-detail="three" aria-expanded="false">Read case study</button>
                 </div>
               </article>
             </div>
 
-            <div class="project-feature project-case project-case-one">
+            <div class="project-feature project-case project-case-one" data-detail-panel="one" hidden>
               <div class="project-feature-copy">
                 <span class="project-kicker">CASE STUDY / 01</span>
                 <h3>Learn to Work · 从研究到体验</h3>
@@ -1753,7 +1936,7 @@
               </div>
             </div>
 
-            <div class="project-feature project-case project-case-two">
+            <div class="project-feature project-case project-case-two" data-detail-panel="two" hidden>
               <div class="project-feature-copy">
                 <span class="project-kicker">CASE STUDY / 02</span>
                 <h3>信息博物馆 · 让新闻回到完整语境</h3>
@@ -1774,7 +1957,7 @@
               </div>
             </div>
 
-            <div class="project-feature project-case project-case-three">
+            <div class="project-feature project-case project-case-three" data-detail-panel="three" hidden>
               <div class="project-feature-copy">
                 <span class="project-kicker">CASE STUDY / 03</span>
                 <h3>生活记录 · 用视觉回应语言暴力</h3>
@@ -1892,11 +2075,155 @@
       const buttons = document.querySelectorAll('.lang-switch button');
       const body = document.body;
 
+      const G = {
+        pointer: {
+          gl: { x: 0, y: 0 },
+          glNormalized: { x: 0, y: 0 },
+          glScreenSpace: { x: 0.5, y: 0.5 }
+        }
+      };
+      window.G = G;
+
+      const webglStage = document.createElement('div');
+      webglStage.className = 'webgl-stage';
+      webglStage.setAttribute('aria-hidden', 'true');
+      const webglCanvas = document.createElement('canvas');
+      webglStage.appendChild(webglCanvas);
+      document.body.prepend(webglStage);
+      const sceneTransition = document.createElement('div');
+      sceneTransition.className = 'scene-transition';
+      document.body.appendChild(sceneTransition);
+
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const compactViewport = window.matchMedia('(max-width: 720px)').matches;
+      const gl = !reducedMotion && !compactViewport
+        ? webglCanvas.getContext('webgl2', { antialias: false, alpha: true })
+        : null;
+      let particleFrame;
+
+      if (gl) {
+        const vertexSource = `#version 300 es
+          precision highp float;
+          uniform float uTime;
+          uniform vec2 uMouse;
+          in vec2 aPosition;
+          out float vAlpha;
+          void main() {
+            vec2 position = aPosition;
+            float distanceToMouse = distance(position, uMouse);
+            float force = 1.0 - smoothstep(0.0, 0.42, distanceToMouse);
+            position.x += normalize(position.x - uMouse.x + 0.0001) * force * 0.18;
+            position.y += normalize(position.y - uMouse.y + 0.0001) * force * 0.045;
+            position.y += sin(uTime * 0.22 + aPosition.x * 9.0) * 0.008;
+            gl_Position = vec4(position, 0.0, 1.0);
+            gl_PointSize = 1.35 + force * 1.8;
+            vAlpha = 0.18 + force * 0.52;
+          }`;
+        const fragmentSource = `#version 300 es
+          precision highp float;
+          uniform vec3 uColor;
+          in float vAlpha;
+          out vec4 outColor;
+          void main() {
+            float circle = 1.0 - smoothstep(0.25, 0.5, distance(gl_PointCoord, vec2(0.5)));
+            outColor = vec4(uColor, circle * vAlpha);
+          }`;
+
+        const compileShader = (type, source) => {
+          const shader = gl.createShader(type);
+          gl.shaderSource(shader, source);
+          gl.compileShader(shader);
+          return shader;
+        };
+        const program = gl.createProgram();
+        gl.attachShader(program, compileShader(gl.VERTEX_SHADER, vertexSource));
+        gl.attachShader(program, compileShader(gl.FRAGMENT_SHADER, fragmentSource));
+        gl.linkProgram(program);
+        const particlePositions = new Float32Array(4096 * 2);
+        for (let index = 0; index < particlePositions.length; index += 2) {
+          particlePositions[index] = Math.random() * 2 - 1;
+          particlePositions[index + 1] = Math.random() * 2 - 1;
+        }
+        const particleBuffer = gl.createBuffer();
+        gl.bindBuffer(gl.ARRAY_BUFFER, particleBuffer);
+        gl.bufferData(gl.ARRAY_BUFFER, particlePositions, gl.STATIC_DRAW);
+        const positionLocation = gl.getAttribLocation(program, 'aPosition');
+        const timeLocation = gl.getUniformLocation(program, 'uTime');
+        const mouseLocation = gl.getUniformLocation(program, 'uMouse');
+        const colorLocation = gl.getUniformLocation(program, 'uColor');
+        const smoothedCamera = { x: 0, y: 0 };
+        const slowerCamera = { x: 0, y: 0 };
+        const compositeMouse = { x: 0, y: 0 };
+
+        function resizeWebgl() {
+          const pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
+          webglCanvas.width = Math.floor(window.innerWidth * pixelRatio);
+          webglCanvas.height = Math.floor(window.innerHeight * pixelRatio);
+          gl.viewport(0, 0, webglCanvas.width, webglCanvas.height);
+        }
+
+        function renderParticles(time) {
+          smoothedCamera.x += (G.pointer.glNormalized.x - smoothedCamera.x) * 0.032;
+          smoothedCamera.y += (G.pointer.glNormalized.y - smoothedCamera.y) * 0.032;
+          slowerCamera.x += (G.pointer.glNormalized.x - slowerCamera.x) * 0.025;
+          slowerCamera.y += (G.pointer.glNormalized.y - slowerCamera.y) * 0.025;
+          compositeMouse.x += (G.pointer.glNormalized.x - compositeMouse.x) * 0.03;
+          compositeMouse.y += (G.pointer.glNormalized.y - compositeMouse.y) * 0.03;
+          const roll = (smoothedCamera.x - slowerCamera.x) * 0.85;
+          document.documentElement.style.setProperty('--camera-x', `${smoothedCamera.x * 18}px`);
+          document.documentElement.style.setProperty('--camera-y', `${smoothedCamera.y * -10}px`);
+          document.documentElement.style.setProperty('--camera-roll', `${roll}deg`);
+          gl.clearColor(0, 0, 0, 0);
+          gl.clear(gl.COLOR_BUFFER_BIT);
+          gl.useProgram(program);
+          gl.bindBuffer(gl.ARRAY_BUFFER, particleBuffer);
+          gl.enableVertexAttribArray(positionLocation);
+          gl.vertexAttribPointer(positionLocation, 2, gl.FLOAT, false, 0, 0);
+          gl.uniform1f(timeLocation, time * 0.001);
+          gl.uniform2f(mouseLocation, compositeMouse.x, compositeMouse.y);
+          gl.uniform3f(colorLocation, 0.843, 0.902, 0.937);
+          gl.drawArrays(gl.POINTS, 0, 4096);
+          particleFrame = requestAnimationFrame(renderParticles);
+        }
+
+        window.addEventListener('resize', resizeWebgl, { passive: true });
+        resizeWebgl();
+        renderParticles(0);
+      }
+
+      window.addEventListener('mousemove', (event) => {
+        G.pointer.gl.x = event.clientX - window.innerWidth / 2;
+        G.pointer.gl.y = event.clientY - window.innerHeight / 2;
+        G.pointer.glNormalized.x = (event.clientX / window.innerWidth) * 2 - 1;
+        G.pointer.glNormalized.y = 1 - (event.clientY / window.innerHeight) * 2;
+        G.pointer.glScreenSpace.x = event.clientX / window.innerWidth;
+        G.pointer.glScreenSpace.y = event.clientY / window.innerHeight;
+      }, { passive: true });
+
+      let lastPointerTarget;
+      document.addEventListener('pointerover', (event) => {
+        const interactiveTarget = event.target.closest('a, button, [role="button"]');
+        if (interactiveTarget === lastPointerTarget) return;
+        lastPointerTarget = interactiveTarget;
+        body.dataset.cursor = interactiveTarget ? 'pointer' : 'default';
+      }, { passive: true });
+
+      document.addEventListener('pointerdown', (event) => {
+        if (event.target.closest('[data-project-scene], .scene-card')) body.dataset.cursor = 'grabbing';
+      }, { passive: true });
+      document.addEventListener('pointerup', () => {
+        body.dataset.cursor = 'default';
+      }, { passive: true });
+
       buttons.forEach((button) => {
         button.addEventListener('click', () => {
           const lang = button.dataset.lang;
           body.setAttribute('data-lang', lang);
-          buttons.forEach((btn) => btn.classList.toggle('active', btn === button));
+          buttons.forEach((btn) => {
+            const isActive = btn === button;
+            btn.classList.toggle('active', isActive);
+            btn.setAttribute('aria-pressed', String(isActive));
+          });
         });
       });
 
@@ -1905,7 +2232,7 @@
       const sceneCards = [...document.querySelectorAll('.scene-card')];
       const sceneStatus = document.querySelector('[data-scene-status]');
       let sceneTimer;
-      let scenePaused = false;
+      let scenePaused = true;
       const sceneNames = {
         one: '01 / 职业技能协同 APP',
         two: '02 / 信息博物馆 VR 体验',
@@ -1919,12 +2246,6 @@
 
       function startSceneRotation() {
         clearInterval(sceneTimer);
-        sceneTimer = setInterval(() => {
-          if (scenePaused || !sceneCards.length) return;
-          const currentIndex = sceneCards.findIndex((card) => card.classList.contains('is-active'));
-          const nextIndex = (currentIndex + 1) % sceneCards.length;
-          focusSceneProject(sceneCards[nextIndex].dataset.project);
-        }, 4200);
       }
 
       sceneCards.forEach((card) => {
@@ -1935,9 +2256,9 @@
       });
 
       scene?.addEventListener('pointerenter', () => { scenePaused = true; });
-      scene?.addEventListener('pointerleave', () => { scenePaused = false; });
+      scene?.addEventListener('pointerleave', () => { scenePaused = true; });
       scene?.addEventListener('focusin', () => { scenePaused = true; });
-      scene?.addEventListener('focusout', () => { scenePaused = false; });
+      scene?.addEventListener('focusout', () => { scenePaused = true; });
 
       scene?.addEventListener('pointermove', (event) => {
         if (!sceneStage || window.matchMedia('(max-width: 720px)').matches) return;
@@ -1961,6 +2282,55 @@
         focusSceneProject(sceneCards[nextIndex].dataset.project);
         sceneCards[nextIndex].focus();
       });
+
+      let scrollFrame;
+      window.addEventListener('scroll', () => {
+        if (scrollFrame) return;
+        scrollFrame = requestAnimationFrame(() => {
+          const progress = window.scrollY / Math.max(document.body.scrollHeight - window.innerHeight, 1);
+          const sceneIndex = Math.min(sceneCards.length - 1, Math.floor(progress * sceneCards.length));
+          if (sceneCards[sceneIndex]) {
+            focusSceneProject(sceneCards[sceneIndex].dataset.project);
+          }
+          document.documentElement.style.setProperty('--scroll-progress', progress.toFixed(3));
+          scrollFrame = null;
+        });
+      }, { passive: true });
+
+      sceneCards.forEach((card) => {
+        card.addEventListener('click', () => {
+          sceneTransition.classList.add('is-active');
+          window.setTimeout(() => sceneTransition.classList.remove('is-active'), 560);
+        });
+      });
+
+      document.querySelectorAll('.project-detail-toggle').forEach((toggle) => {
+        toggle.addEventListener('click', () => {
+          const panel = document.querySelector(`[data-detail-panel="${toggle.dataset.detail}"]`);
+          const isOpening = panel?.hasAttribute('hidden');
+          if (!panel) return;
+          panel.toggleAttribute('hidden', !isOpening);
+          document.querySelectorAll(`[data-detail="${toggle.dataset.detail}"]`).forEach((button) => {
+            button.setAttribute('aria-expanded', String(isOpening));
+            button.textContent = isOpening
+              ? (body.dataset.lang === 'en' ? 'Hide case study' : '收起项目详情')
+              : (body.dataset.lang === 'en' ? 'Read case study' : '展开项目详情');
+          });
+          if (isOpening) panel.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', block: 'start' });
+        });
+      });
+
+      const navLinks = [...document.querySelectorAll('[data-nav-section]')];
+      const navSections = navLinks
+        .map((link) => document.getElementById(link.dataset.navSection))
+        .filter(Boolean);
+      const navObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          navLinks.forEach((link) => link.setAttribute('aria-current', link.dataset.navSection === entry.target.id ? 'true' : 'false'));
+        });
+      }, { rootMargin: '-35% 0px -55% 0px', threshold: 0 });
+      navSections.forEach((section) => navObserver.observe(section));
 
       startSceneRotation();
     </script>
